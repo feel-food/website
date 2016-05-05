@@ -1,8 +1,8 @@
 // -----------------------------------------------------------------------------
-// Site main menu
+// Site secondary menu
 // -----------------------------------------------------------------------------
 
-.site-main-menu {
+.site-secondary-menu {
 
   ul {
 
@@ -11,16 +11,12 @@
     }
 
     a {
-      @include pxtorem(9px, 18px);
-      display: block;
-      padding: $block-padder-medium;
+      @extend %button--border--reversed;
       color: #6a696a;
-      letter-spacing: 0.025em;
-      text-transform: uppercase;
+      padding: $block-padder-medium $block-padder;
 
       @include breakpoint('medium') {
-        @include pxtorem(12px, 20px);
-        padding: $block-padder;
+        padding: $block-padder-medium $block-padder;
       }
 
       &.current {

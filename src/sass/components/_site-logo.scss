@@ -3,12 +3,21 @@
 // -----------------------------------------------------------------------------
 
 .site-logo {
-  
+
   @include when-inside('.header') {
     width: 38px;
 
     @include breakpoint('medium') {
       width: 60px;
+    }
+  }
+
+  @include when-inside('.footer') {
+    width: 53px;
+    opacity: 0.3;
+
+    @include breakpoint('medium') {
+      width: 63px;
     }
   }
 

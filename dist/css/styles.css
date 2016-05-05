@@ -1,4 +1,4 @@
-.header .button, .header.reversed .button {
+.site-secondary-menu ul a, .header .button, .header.reversed .button {
   font-family: "Roboto", Arial, sans-serif; }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -51,7 +51,7 @@ table {
 /**
  * Clear inner floats
  */
-.header::after {
+.header::after, .footer::after {
   clear: both;
   content: '';
   display: table; }
@@ -111,7 +111,7 @@ a {
   a:hover, a:active, a:focus {
     color: #3c3c3c; }
 
-.header .button, .header.reversed .button {
+.site-secondary-menu ul a, .header .button, .header.reversed .button {
   font-size: 0.563rem;
   line-height: 0.889;
   display: inline-block;
@@ -124,19 +124,19 @@ a {
   cursor: pointer;
   -webkit-appearance: none; }
   @media (min-width: 640px) {
-    .header .button, .header.reversed .button {
+    .site-secondary-menu ul a, .header .button, .header.reversed .button {
       font-size: 0.813rem;
       line-height: 0.923;
       padding: 20px 30px; } }
 
-.header .button, .header.reversed .button {
+.site-secondary-menu ul a, .header .button, .header.reversed .button {
   border: 1px solid;
   padding: 14px 20px; }
   @media (min-width: 640px) {
-    .header .button, .header.reversed .button {
+    .site-secondary-menu ul a, .header .button, .header.reversed .button {
       padding: 19px 30px; } }
 
-.header .button {
+.site-secondary-menu ul a, .header .button {
   color: #ffffff; }
 
 .header.reversed .button {
@@ -147,6 +147,13 @@ a {
   @media (min-width: 640px) {
     .header .site-logo {
       width: 60px; } }
+
+.footer .site-logo {
+  width: 53px;
+  opacity: 0.3; }
+  @media (min-width: 640px) {
+    .footer .site-logo {
+      width: 63px; } }
 
 .site-logo a {
   display: block; }
@@ -173,6 +180,18 @@ a {
       line-height: 1.667;
       padding: 20px; } }
   .site-main-menu ul a.current {
+    color: #464546; }
+
+.site-secondary-menu ul li {
+  display: inline-block; }
+
+.site-secondary-menu ul a {
+  color: #6a696a;
+  padding: 10px 20px; }
+  @media (min-width: 640px) {
+    .site-secondary-menu ul a {
+      padding: 10px 20px; } }
+  .site-secondary-menu ul a.current {
     color: #464546; }
 
 .header {
@@ -216,3 +235,33 @@ a {
         color: #3c3c3c; }
         .header.reversed .site-main-menu a.current {
           color: #afafaf; }
+
+.footer {
+  position: relative;
+  padding: 20px 0 20px 20px;
+  box-sizing: border-box; }
+  @media (min-width: 640px) {
+    .footer {
+      padding: 40px; } }
+  .footer .site-logo,
+  .footer .site-main-menu {
+    float: left; }
+  .footer .site-logo {
+    margin-right: 20px;
+    padding-top: 8px; }
+    @media (min-width: 640px) {
+      .footer .site-logo {
+        padding-top: 15px; } }
+  .footer .site-main-menu a {
+    padding: 10px 5px; }
+    @media (min-width: 640px) {
+      .footer .site-main-menu a {
+        font-size: 0.688rem;
+        line-height: 1.455;
+        padding: 20px; } }
+  .footer .site-secondary-menu {
+    clear: left; }
+    @media (min-width: 640px) {
+      .footer .site-secondary-menu {
+        clear: none;
+        float: right; } }

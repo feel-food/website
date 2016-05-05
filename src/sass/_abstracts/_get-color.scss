@@ -3,7 +3,7 @@
 // @param {String} $root
 // @param {String} $suffix
 // example :
-//    @include get-color('text', 'base')
+//    color: get-color('text', 'base')
 // -----------------------------------------------------------------------------
 
 @function get-color($root: 'text', $suffix: 'base'){
