@@ -29,6 +29,7 @@ body {
   margin: 0 auto;
   width: 100%;
   min-width: map-get($site-range, 'min') + px;
+  max-width: map-get($site-range, 'max') + px;
   min-height: 100%;
 }
 
