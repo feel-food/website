@@ -11,6 +11,8 @@
   "license"        : "Apache-2.0",
   "devDependencies": {
     "datauri"          : "latest",
+    "fs-extra"         : "^0.30.0",
+    "glob"             : "^7.0.3",
     "gulp"             : "^3.9.1",
     "gulp-autoprefixer": "latest",
     "gulp-combine-mq"  : "latest",
@@ -23,11 +25,10 @@
     "gulp-rename"      : "latest",
     "gulp-sass"        : "latest",
     "gulp-uglify"      : "latest",
-    "gulp-watch"       : "latest",
-    "node-sass"        : "latest",
-    "run-sequence"     : "latest",
     "gulp-util"        : "latest",
+    "gulp-watch"       : "latest",
     "lodash"           : "latest",
-    "wrench"           : "latest"
+    "node-sass"        : "latest",
+    "run-sequence"     : "latest"
   }
 }
