@@ -16,7 +16,8 @@ Thumbs.db
 .tmp
 node_modules
 
-# DIST #
+# DIST & GENERATED FILES #
 dist/css
 dist/favicon
 dist/images
+src/sass/components/_icons.scss

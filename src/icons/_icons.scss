@@ -1,0 +1,49 @@
+$icon-system: ();
+$styleguideSubId: 5;
+/*
+Icons
+
+Fichier SASS automatiquement généré par gulp
+
+Styleguide 2.#{$styleguideSubId}.
+*/
+
+<% i = 1 %>
+<% _.forEach( icons, function( icon ){ %>
+
+/*
+<%= icon.name %>
+
+Markup:
+<img src="<%= icon.datauri %>" alt="" width="<%= icon.width %>" height="<%= icon.height %>" />
+
+Styleguide 2.#{$styleguideSubId}.<%= i %>.
+*/
+
+$unit: (
+    '<%= icon.name %>': (
+        'width': <%= icon.width %>px,
+        'height': <%= icon.height %>px
+    )
+);
+$icon-system: map-merge($icon-system, $unit);
+
+%<%= icon.name %> {
+    background-image: url("<%= icon.datauri %>");
+    background-repeat: no-repeat;
+
+    //.no-svg & {
+    //  background-image: image-url("icon-png/<%= icon.name %>.png");
+    //}
+}
+%<%= icon.name %>--standalone {
+    content: "";
+    @extend %<%= icon.name %>;
+    display: inline-block;
+    width: <%= icon.width %>px;
+    height: <%= icon.height %>px;
+    background-size: <%= icon.width %>px <%= icon.height %>px;
+}
+
+<% i++ %>
+<% }); %>

@@ -27,6 +27,7 @@ var options = {
             source     : {
                 favicon   : 'src/favicon.png',
                 images    : 'src/images/**/*',
+                icons     : 'src/icons/',
                 imagesDir : 'src/images/',
                 sass      : 'src/sass/**/*.scss',
                 sassDir   : 'src/sass/',
@@ -34,12 +35,14 @@ var options = {
                 scriptsDir: 'src/scripts/'
             },
             destination: {
-                favicon: 'dist/favicon/',
-                images : 'dist/images/',
-                css    : 'dist/css/',
-                scripts: 'dist/js/'
+                favicon  : 'dist/favicon/',
+                images   : 'dist/images/',
+                css      : 'dist/css/',
+                scripts  : 'dist/js/',
+                iconsScss: 'src/sass/components'
             }
-        }
+        },
+        absolutePath       : __dirname
     }
 };
 
