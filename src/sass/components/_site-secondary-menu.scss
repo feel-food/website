@@ -3,24 +3,45 @@
 // -----------------------------------------------------------------------------
 
 .site-secondary-menu {
+  opacity: 0.5;
 
   ul {
 
     li {
       display: inline-block;
+      margin-top: ($block-margin-before / 4);
+      margin-left: ($block-margin-before / 4);
+
+      @include breakpoint('medium') {
+        margin-top: ($block-margin-before / 2);
+      }
     }
 
     a {
+      @extend %hide-text;
       @extend %button--border--reversed;
-      color: #6a696a;
       padding: $block-padder-medium $block-padder;
+      width: 60px;
+      background-position: center;
+      background-size: auto 13px;
+      border-color: rgba(get-color('block', 'base'), 0.5);
 
       @include breakpoint('medium') {
         padding: $block-padder-medium $block-padder;
+        width: 80px;
+        background-size: auto;
       }
 
-      &.current {
-        color: #464546;
+      &.contact {
+        @extend %icon_contact-std;
+      }
+
+      &.linkedin {
+        @extend %icon_linkedin;
+      }
+
+      &.facebook {
+        @extend %icon_facebook;
       }
     }
   }
