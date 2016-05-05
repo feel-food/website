@@ -1,124 +1,70 @@
-var gulp        = require('gulp');
-var runSequence = require('run-sequence')
+'use strict';
 
-var favicons     = require("gulp-favicons"),
-    imagemin     = require('gulp-imagemin'),
-    sass         = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    combineMq    = require('gulp-combine-mq'),
-    cssnano      = require('gulp-cssnano'),
-    rename       = require('gulp-rename'),
-    concat       = require('gulp-concat'),
-    uglify       = require('gulp-uglify'),
-    livereload   = require('gulp-livereload');
+var gulp   = require('gulp');
+var gutil  = require('gulp-util');
+var _      = require('lodash');
+var wrench = require('wrench');
 
-var params = {
-    siteName           : 'feel-food',
-    siteDesc           : 'Feel Food',
-    appVersion         : '1.0.0',
-    developerName      : 'Yann Lombard',
-    developerURL       : 'http://yannlombard.fr/',
-    faviconsPath       : './favicon/',
-    faviconsIncludePath: 'src/_favicon.txt',
-    tasksPath          : {
-        source     : {
-            favicon   : 'src/favicon.png',
-            images    : 'src/images/**/*',
-            imagesDir : 'src/images/',
-            sass      : 'src/sass/**/*.scss',
-            sassDir   : 'src/sass/',
-            scripts   : 'src/scripts/**/*.js',
-            scriptsDir: 'src/scripts/'
-        },
-        destination: {
-            favicon: 'dist/favicon/',
-            images : 'dist/images/',
-            css    : 'dist/css/',
-            scripts: 'dist/js/'
+var combineMq    = require('gulp-combine-mq');
+var cssnano      = require('gulp-cssnano');
+var rename       = require('gulp-rename');
+var concat       = require('gulp-concat');
+var uglify       = require('gulp-uglify');
+var livereload   = require('gulp-livereload');
+
+
+var options = {
+    src         : 'src',
+    dist        : 'dist',
+    tmp         : '.tmp',
+    e2e         : 'e2e',
+    errorHandler: function(title) {
+        return function(err) {
+            gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
+            this.emit('end');
+        };
+    },
+    params      : {
+        siteName           : 'feel-food',
+        siteDesc           : 'Feel Food',
+        appVersion         : '1.0.0',
+        developerName      : 'Yann Lombard',
+        developerURL       : 'http://yannlombard.fr/',
+        faviconsPath       : './favicon/',
+        faviconsIncludePath: 'src/_favicon.txt',
+        tasksPath          : {
+            source     : {
+                favicon   : 'src/favicon.png',
+                images    : 'src/images/**/*',
+                imagesDir : 'src/images/',
+                sass      : 'src/sass/**/*.scss',
+                sassDir   : 'src/sass/',
+                scripts   : 'src/scripts/**/*.js',
+                scriptsDir: 'src/scripts/'
+            },
+            destination: {
+                favicon: 'dist/favicon/',
+                images : 'dist/images/',
+                css    : 'dist/css/',
+                scripts: 'dist/js/'
+            }
         }
     }
 };
 
-// Favicon generation
-gulp.task('favicons', function() {
-    return gulp.src(params.tasksPath.source.favicon)
-        .pipe(
-            favicons({
-                appName    : params.siteName, // Your application's name. `string`
-                background : '#fff', // Background colour for flattened icons. `string`
-                path       : params.faviconsPath,      // Path for overriding default icons path. `string`
-                url        : params.faviconsPath,       // Absolute URL for OpenGraph image. `string`
-                display    : 'standalone', // Android display: "browser" or "standalone". `string`
-                orientation: 'portrait', // Android orientation: "portrait" or "landscape". `string`
-                version    : params.appVersion, // Your application's version number. `number`
-                logging    : false, // Print logs to console? `boolean`
-                online     : false, // Use RealFaviconGenerator to create favicons? `boolean`
-                icons      : {
-                    android     : true,              // Create Android homescreen icon. `boolean`
-                    appleIcon   : true,            // Create Apple touch icons. `boolean`
-                    appleStartup: true,         // Create Apple startup images. `boolean`
-                    coast       : false,                // Create Opera Coast icon. `boolean`
-                    favicons    : true,             // Create regular favicons. `boolean`
-                    firefox     : true,              // Create Firefox OS icons. `boolean`
-                    opengraph   : false,            // Create Facebook OpenGraph image. `boolean`
-                    twitter     : false,              // Create Twitter Summary Card image. `boolean`
-                    windows     : true,              // Create Windows 8 tile icons. `boolean`
-                    yandex      : true                // Create Yandex browser icon. `boolean`
-                },
-                html       : params.faviconsIncludePath
-            })
-        )
-        .pipe(
-            gulp.dest(params.tasksPath.destination.favicon)
-        );
+wrench.readdirSyncRecursive('./gulp').filter(function(file) {
+    return (/\.(js|coffee)$/i).test(file);
+}).map(function(file) {
+    require('./gulp/' + file)(options);
 });
 
-// Image minification
-gulp.task('images', function() {
-    return gulp.src(params.tasksPath.source.images)
-        .pipe(
-            imagemin({
-                progressive: true,
-                svgoPlugins: [{
-                    removeViewBox: false
-                }]
-            })
-        )
-        .pipe(
-            gulp.dest(params.tasksPath.destination.images)
-        );
+gulp.task('default', ['clean'], function() {
+    gulp.start('build');
 });
 
-// SASS Compile with Autoprefixer
-gulp.task('sass', function() {
-    return gulp.src(params.tasksPath.source.sass)
-        .pipe(
-            sass().on('error', sass.logError)
-        )
-        .pipe(
-            gulp.dest(params.tasksPath.destination.css)
-        )
-        .pipe(
-            autoprefixer({
-                'browsers': [
-                    'last 2 Edge versions',
-                    'last 2 Chrome versions',
-                    'last 2 Firefox versions',
-                    'last 2 Explorer versions',
-                    'last 2 Safari versions',
-                    'ie 11',
-                    'ie 10',
-                    'ie 9',
-                    'last 2 Android versions',
-                    'last 2 iOS versions',
-                    '> 3%'
-                ]
-            })
-        )
-        .pipe(
-            gulp.dest(params.tasksPath.destination.css)
-        );
-});
+
+var params = options.params;
+
 
 // Clean CSS
 gulp.task('cssclean', function() {
@@ -144,6 +90,7 @@ gulp.task('cssclean', function() {
         );
 });
 
+var runSequence = require('run-sequence');
 // Styles task
 gulp.task('styles', function(callback) {
     runSequence('sass', 'cssclean', callback);

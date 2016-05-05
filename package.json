@@ -1,29 +1,33 @@
 {
-  "name": "feel-food",
-  "version": "1.0.0",
-  "description": "Feel Food",
-  "main": "gulpfile.js",
-  "repository": {
+  "name"           : "feel-food",
+  "version"        : "1.0.0",
+  "description"    : "Feel Food",
+  "main"           : "gulpfile.js",
+  "repository"     : {
     "type": "git",
-    "url": "git+https://github.com/feel-food/website.git"
+    "url" : "git+https://github.com/feel-food/website.git"
   },
-  "author": "Yann Lombard",
+  "author"         : "Yann Lombard",
+  "license"        : "Apache-2.0",
   "devDependencies": {
-    "datauri": "latest",
-    "gulp": "^3.9.1",
+    "datauri"          : "latest",
+    "gulp"             : "^3.9.1",
     "gulp-autoprefixer": "latest",
-    "gulp-combine-mq": "latest",
-    "gulp-concat": "latest",
-    "gulp-cssnano": "latest",
-    "gulp-favicons": "latest",
-    "gulp-imagemin": "latest",
-    "gulp-livereload": "latest",
+    "gulp-combine-mq"  : "latest",
+    "gulp-concat"      : "latest",
+    "gulp-cssnano"     : "latest",
+    "gulp-favicons"    : "latest",
+    "gulp-imagemin"    : "latest",
+    "gulp-livereload"  : "latest",
     "gulp-load-plugins": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest",
-    "gulp-uglify": "latest",
-    "gulp-watch": "latest",
-    "node-sass": "latest",
-    "run-sequence": "latest"
+    "gulp-rename"      : "latest",
+    "gulp-sass"        : "latest",
+    "gulp-uglify"      : "latest",
+    "gulp-watch"       : "latest",
+    "node-sass"        : "latest",
+    "run-sequence"     : "latest",
+    "gulp-util"        : "latest",
+    "lodash"           : "latest",
+    "wrench"           : "latest"
   }
 }
