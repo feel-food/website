@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// Buttons
+// use as @extend
+// -----------------------------------------------------------------------------
+
+%button {
+
+  // Basic button
+  &--base {
+    @extend %font-std;
+    @include pxtorem(9px, 8px);
+    display: inline-block;
+    padding: ($block-padder-medium * 1.5) ($block-padder);
+    border: 0;
+    border-radius: 6px;
+    color: get-color('text', 'base');
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-appearance: none;
+
+    @include breakpoint('medium') {
+      @include pxtorem(13px, 12px);
+      padding: $block-padder ($block-padder-medium * 3);
+    }
+  }
+
+  // Border buttons
+  &--border {
+    @extend %button--base;
+    border: 1px solid;
+    padding: (($block-padder-medium * 1.5) - 1px) ($block-padder);
+
+    @include breakpoint('medium') {
+      padding: ($block-padder - 1px) ($block-padder-medium * 3);
+    }
+  }
+
+  &--border--std {
+    @extend %button--border;
+    color: get-color('text', 'base');
+  }
+
+  &--border--reversed {
+    @extend %button--border;
+    color: get-color('text', 'base-reversed');
+  }
+
+  &--border--primary {
+    @extend %button--border;
+    color: get-color('theme', 'primary');
+  }
+
+  // Gradient buttons
+
+  &--gradient {
+    @extend %button--base;
+    color: get-color('text', 'base-reversed');
+  }
+
+  &--gradient--std {
+    @extend %button--gradient;
+    background: linear-gradient(117deg, get-color('theme', 'primary') 0%, get-color('theme', 'secondary') 100%);
+  }
+
+  &--gradient--reversed {
+    @extend %button--gradient;
+    background: linear-gradient(117deg, get-color('theme', 'secondary') 0%, get-color('theme', 'primary') 100%);
+  }
+}

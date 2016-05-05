@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// Site logo
+// -----------------------------------------------------------------------------
+
+.site-logo {
+  
+  @include when-inside('.header') {
+    width: 38px;
+
+    @include breakpoint('medium') {
+      width: 60px;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}

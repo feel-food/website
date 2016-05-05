@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// Site main menu
+// -----------------------------------------------------------------------------
+
+.site-main-menu {
+
+  ul {
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      @include pxtorem(9px, 18px);
+      display: block;
+      padding: $block-padder-medium;
+      color: #6a696a;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+
+      @include breakpoint('medium') {
+        @include pxtorem(12px, 20px);
+        padding: $block-padder;
+      }
+
+      &.current {
+        color: #464546;
+      }
+    }
+  }
+}

@@ -1,0 +1,217 @@
+.header .button, .header.reversed .button {
+  font-family: "Roboto", Arial, sans-serif; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+ * Clear inner floats
+ */
+.header::after {
+  clear: both;
+  content: '';
+  display: table; }
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+@font-face {
+  font-family: "Trade Gothic LT Com Bold";
+  src: url("0d8d136677301b8182c4a5ae3125a35e.eot");
+  /* IE9*/
+  src: url("0d8d136677301b8182c4a5ae3125a35e.eot?#iefix") format("embedded-opentype"), url("0d8d136677301b8182c4a5ae3125a35e.woff2") format("woff2"), url("0d8d136677301b8182c4a5ae3125a35e.woff") format("woff"), url("0d8d136677301b8182c4a5ae3125a35e.ttf") format("truetype"), url("0d8d136677301b8182c4a5ae3125a35e.svg#Trade Gothic LT Com Bold") format("svg");
+  /* iOS 4.1- */ }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+body {
+  font: 400 62.5%/1.2 "Roboto", Arial, sans-serif;
+  background: #060506; }
+
+.page-wrapper {
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%; }
+
+a {
+  color: #ff1a4b;
+  text-decoration: none; }
+  a:hover, a:active, a:focus {
+    color: #3c3c3c; }
+
+.header .button, .header.reversed .button {
+  font-size: 0.563rem;
+  line-height: 0.889;
+  display: inline-block;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 6px;
+  color: #3c3c3c;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none; }
+  @media (min-width: 640px) {
+    .header .button, .header.reversed .button {
+      font-size: 0.813rem;
+      line-height: 0.923;
+      padding: 20px 30px; } }
+
+.header .button, .header.reversed .button {
+  border: 1px solid;
+  padding: 14px 20px; }
+  @media (min-width: 640px) {
+    .header .button, .header.reversed .button {
+      padding: 19px 30px; } }
+
+.header .button {
+  color: #ffffff; }
+
+.header.reversed .button {
+  color: #ff1a4b; }
+
+.header .site-logo {
+  width: 38px; }
+  @media (min-width: 640px) {
+    .header .site-logo {
+      width: 60px; } }
+
+.site-logo a {
+  display: block; }
+
+.site-logo img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+.site-main-menu ul li {
+  display: inline-block; }
+
+.site-main-menu ul a {
+  font-size: 0.563rem;
+  line-height: 2;
+  display: block;
+  padding: 10px;
+  color: #6a696a;
+  letter-spacing: 0.025em;
+  text-transform: uppercase; }
+  @media (min-width: 640px) {
+    .site-main-menu ul a {
+      font-size: 0.75rem;
+      line-height: 1.667;
+      padding: 20px; } }
+  .site-main-menu ul a.current {
+    color: #464546; }
+
+.header {
+  position: relative;
+  padding: 20px 0 20px 20px;
+  box-sizing: border-box;
+  height: 78px; }
+  @media (min-width: 640px) {
+    .header {
+      padding: 40px;
+      height: 140px; } }
+  .header .site-logo,
+  .header .site-main-menu,
+  .header .button {
+    float: left; }
+  .header .site-logo {
+    margin-right: 10px; }
+    @media (min-width: 640px) {
+      .header .site-logo {
+        margin-right: 20px; } }
+  .header .button {
+    display: none;
+    float: right;
+    margin-left: 20px;
+    margin-right: 20px; }
+    @media (min-width: 640px) {
+      .header .button {
+        display: block;
+        margin-top: 4px;
+        margin-right: 0; } }
+  .header.reversed {
+    background: #ffffff; }
+    .header.reversed .button {
+      display: block; }
+    .header.reversed .site-main-menu {
+      display: none; }
+      @media (min-width: 640px) {
+        .header.reversed .site-main-menu {
+          display: block; } }
+      .header.reversed .site-main-menu a {
+        color: #3c3c3c; }
+        .header.reversed .site-main-menu a.current {
+          color: #afafaf; }
