@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// Convert pxtorem
+// @param {Number} $size
+// @param {Number} $lineHeight [null]
+// -----------------------------------------------------------------------------
+
+@mixin pxtorem($size, $lineHeight:null) {
+  
+  $baseSize: 16px;
+  $sizeOutput: round(($size / $baseSize) * 1000) / 1000;
+  
+  font-size: #{$sizeOutput}rem;
+  @if $lineHeight != null {
+    $lineHeightOutput: round(($lineHeight / $size) * 1000) / 1000;
+    line-height: $lineHeightOutput;
+  }
+  @else {
+    line-height: normal;
+  }
+  
+}

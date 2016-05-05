@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// Get variable color
+// @param {String} $root
+// @param {String} $suffix
+// example :
+//    @include get-color('text', 'base')
+// -----------------------------------------------------------------------------
+
+@function get-color($root: 'text', $suffix: 'base'){
+
+  @return map-get(map-get($color-system, $root), $suffix);
+
+}

@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// Basic styles
+// -----------------------------------------------------------------------------
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font: 400 62.5%/1.2 $font-std;
+}
+
+.page-wrapper {
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  width: 100%;
+  min-width: map-get($site-range, 'min') + px;
+  min-height: 100%;
+}
+
+a {
+  color: get-color('theme', 'primary');
+  text-decoration: none;
+
+  @include on-event {
+    color: get-color('text', 'base');
+  }
+}

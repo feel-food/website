@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+// Font families
+// use as variable or with @extend
+// -----------------------------------------------------------------------------
+
+$font-std: 'Roboto', Arial, sans-serif;
+%font-std {
+  font-family: $font-std;
+}
+
+$font-heading: 'Trade Gothic LT Com Bold', Lato, Arial, sans-serif;
+%font-heading {
+  font-family: $font-heading;
+}
+
+
+// -----------------------------------------------------------------------------
+// Font sizes
+// use with @extend
+// -----------------------------------------------------------------------------
+
+%font-size-std {
+  @include pxtorem(15px, 24px);
+}
+
+%font-size-medium {
+  @include pxtorem(30px, 30px);
+
+  @include breakpoint('medium') {
+    @include pxtorem(30px, 30px);
+  }
+}
+
+%font-size-highlight {
+  @include pxtorem(66px, 60px);
+
+  @include breakpoint('large') {
+    @include pxtorem(66px, 60px);
+  }
+}

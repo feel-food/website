@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// Colors
+// -----------------------------------------------------------------------------
+
+$color-system: (
+
+  // Couleurs de texte de base
+  'text': (
+    'base':                   #3c3c3c,
+    'base-reversed':          #ffffff,
+    'base-lighter':           #afafaf,
+    'secondary':              #797471,
+    'soft':                   #5c1525
+  ),
+
+  // Couleurs de base des blocks
+  'block': (
+    'base':                   #ffffff,
+    'base-reversed':          #3c3c3c,
+    'base-soft':              #eaded7
+  ),
+
+  // Couleurs du thème
+  'theme':(
+    'primary':                #ff1a4b,
+    'secondary':              #ff4c29,
+    'tertiary':               #391e0c,
+  ),
+
+  // Couleurs réseaux sociaux
+  'community': (
+    'facebook':               #3b5998,
+    'twitter':                #55acee
+  ),
+
+);
