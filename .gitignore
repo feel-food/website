@@ -16,3 +16,8 @@ Thumbs.db
 .sass-cache
 .tmp
 node_modules
+
+# DIST #
+dist/css
+dist/favicon
+dist/images
