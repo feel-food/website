@@ -1,0 +1,69 @@
+// -----------------------------------------------------------------------------
+// Header
+// -----------------------------------------------------------------------------
+
+.header {
+  @extend %clearfix;
+  position: relative;
+  padding: $block-padder 0 $block-padder $block-padder;
+  box-sizing: border-box;
+  height: map-get($header-height, 'std');
+
+  @include breakpoint('medium') {
+    padding: $block-padder-larger;
+    height: map-get($header-height, 'medium');
+  }
+
+  .site-logo,
+  .site-main-menu,
+  .button {
+    float: left;
+  }
+
+  .site-logo {
+    margin-right: $block-margin-after / 2;
+
+    @include breakpoint('medium') {
+      margin-right: $block-margin-after;
+    }
+  }
+
+  .button {
+    @extend %button--border--reversed;
+    display: none;
+    float: right;
+    margin-left: $block-margin-before;
+    margin-right: $block-margin-after;
+
+    @include breakpoint('medium') {
+      display: block;
+      margin-top: 4px;
+      margin-right: 0;
+    }
+  }
+
+  &.reversed {
+    background: get-color('block', 'base');
+
+    .button {
+      @extend %button--border--primary;
+      display: block;
+    }
+
+    .site-main-menu {
+      display: none;
+
+      @include breakpoint('medium') {
+        display: block;
+      }
+
+      a {
+        color: get-color('text', 'base');
+
+        &.current {
+          color: get-color('text', 'base-lighter');
+        }
+      }
+    }
+  }
+}
