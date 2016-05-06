@@ -6,7 +6,8 @@ var glob  = require('glob');
 
 var options = {
     src         : 'src',
-    dist        : 'dist',
+    dist        : 'src/dist',
+    build       : 'build',
     tmp         : '.tmp',
     e2e         : 'e2e',
     errorHandler: function(title) {
@@ -35,10 +36,10 @@ var options = {
                 scriptsDir: 'src/scripts/'
             },
             destination: {
-                favicon  : 'dist/favicon/',
-                images   : 'dist/images/',
-                css      : 'dist/css/',
-                scripts  : 'dist/js/',
+                favicon  : 'src/dist/favicon/',
+                images   : 'images',
+                css      : 'src/dist/css/',
+                scripts  : 'src/dist/js/',
                 iconsScss: 'src/sass/components'
             }
         },
