@@ -37,9 +37,9 @@ a {
   color: get-color('theme', 'primary');
   text-decoration: none;
 
-  @include on-event {
+  /*@include on-event {
     color: get-color('text', 'base');
-  }
+  }*/
 }
 
 strong {

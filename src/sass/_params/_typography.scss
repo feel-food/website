@@ -20,11 +20,15 @@ $font-heading: 'Trade Gothic LT Com Bold', Lato, Arial, sans-serif;
 // -----------------------------------------------------------------------------
 
 %font-size-std {
-  @include pxtorem(15px, 24px);
+  @include pxtorem(11px, 16px);
+
+  @include breakpoint('medium') {
+    @include pxtorem(15px, 24px);
+  }
 }
 
 %font-size-medium {
-  @include pxtorem(30px, 30px);
+  @include pxtorem(20px, 20px);
 
   @include breakpoint('medium') {
     @include pxtorem(30px, 30px);

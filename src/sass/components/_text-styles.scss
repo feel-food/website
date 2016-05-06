@@ -40,6 +40,14 @@
   }
 }
 
+%title-medium {
+  @extend %font-heading;
+  @extend %font-size-medium;
+  margin-bottom: $text-margin-large;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
 %text-std {
   @extend %font-std;
   @extend %font-size-std;

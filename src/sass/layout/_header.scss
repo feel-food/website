@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   z-index: 10;
-  box-sizing: border-box;
+  min-width: 320px;
   height: map-get($header-height, 'std');
 
   @include breakpoint('medium') {
@@ -29,6 +29,7 @@
   .container {
     @extend %clearfix;
     @extend %container;
+    max-width: map-get($site-range, 'max') + px;
     padding: $block-padder 0 $block-padder $block-padder;
 
     @include breakpoint('medium') {
@@ -57,7 +58,7 @@
     margin-left: $block-margin-before;
     margin-right: $block-margin-after;
 
-    @include breakpoint('medium') {
+    @include breakpoint('large') {
       display: block;
       margin-top: 4px;
       margin-right: 0;

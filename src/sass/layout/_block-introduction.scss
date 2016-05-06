@@ -40,4 +40,15 @@
       padding: 0 $block-padder-larger;
     }
   }
+
+
+  &--action {
+    @extend %button--border--reversed;
+    margin-top: $text-margin-large;
+    display: inline-block;
+
+    @include breakpoint('large') {
+      display: none;
+    }
+  }
 }
