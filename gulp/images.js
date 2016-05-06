@@ -24,7 +24,7 @@ module.exports = function(options) {
                 imagemin(imageminConfig)
             )
             .pipe(
-                gulp.dest(distDests)
+                gulp.dest(distDest)
             );
     });
 };
