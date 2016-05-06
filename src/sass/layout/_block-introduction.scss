@@ -13,18 +13,31 @@
     height: 770px;
   }
 
+  &--content {
+    @extend %container;
+    max-width: 220px;
+    text-align: center;
+
+    @include breakpoint('medium') {
+      max-width: 500px;
+    }
+  }
+
   &--title {
     @extend %title-highlight;
-    max-width: 200px;
     color: get-color('text', 'base-reversed');
-    text-align: center;
 
     &::after {
       background-image: url(../images/backgrounds/title-highlight-introduction-entreprise.png);
     }
+  }
+  
+  &--desc {
+    @extend %text-std;
+    color: get-color('text', 'base-reversed');
 
     @include breakpoint('medium') {
-      max-width: 460px;
+      padding: 0 $block-padder-larger;
     }
   }
 }

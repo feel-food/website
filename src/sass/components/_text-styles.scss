@@ -7,6 +7,7 @@
   @extend %font-heading;
   @extend %font-size-highlight;
   position: relative;
+  margin-bottom: $text-margin-large;
   padding-bottom: $block-padder-medium;
   line-height: 36px;
   letter-spacing: -0.025em;
@@ -37,4 +38,10 @@
       background-size: 100% 60px;
     }
   }
+}
+
+%text-std {
+  @extend %font-std;
+  @extend %font-size-std;
+  letter-spacing: 0.025em;
 }
