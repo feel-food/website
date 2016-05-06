@@ -19,5 +19,6 @@ node_modules
 # DIST & BUILD & GENERATED FILES #
 src/sass/components/_icons.scss
 build
-src/dist
 src/dist/css
+src/dist/favicon
+src/dist/images
