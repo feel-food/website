@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// Block introduction
+// -----------------------------------------------------------------------------
+
+.block-introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 586px;
+  background: url(../images/backgrounds/01_FeelFood_6_ENTREPRISE_homepa.jpg) no-repeat center/cover;
+
+  @include breakpoint('medium') {
+    height: 770px;
+  }
+
+  &--title {
+    @extend %title-highlight;
+    color: get-color('text', 'base-reversed');
+    max-width: 240px;
+    text-align: center;
+
+    @include breakpoint('medium') {
+      max-width: 440px;
+    }
+  }
+}

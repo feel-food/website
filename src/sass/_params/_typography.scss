@@ -32,9 +32,9 @@ $font-heading: 'Trade Gothic LT Com Bold', Lato, Arial, sans-serif;
 }
 
 %font-size-highlight {
-  @include pxtorem(66px, 60px);
+  @include pxtorem(40px, 35px);
 
-  @include breakpoint('large') {
+  @include breakpoint('medium') {
     @include pxtorem(66px, 60px);
   }
 }

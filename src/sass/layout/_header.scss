@@ -3,15 +3,37 @@
 // -----------------------------------------------------------------------------
 
 .header {
-  @extend %clearfix;
-  position: relative;
-  padding: $block-padder 0 $block-padder $block-padder;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   box-sizing: border-box;
   height: map-get($header-height, 'std');
 
   @include breakpoint('medium') {
-    padding: $block-padder-larger;
     height: map-get($header-height, 'medium');
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 180px;
+    background: linear-gradient(to bottom, #060506 0%, rgba(#060506, 0) 100%);
+  }
+
+  .container {
+    @extend %clearfix;
+    @extend %container;
+    padding: $block-padder 0 $block-padder $block-padder;
+
+    @include breakpoint('medium') {
+      padding: $block-padder-larger;
+    }
   }
 
   .site-logo,
@@ -44,6 +66,10 @@
 
   &.reversed {
     background: get-color('block', 'base');
+
+    &::before {
+      display: none;
+    }
 
     .button {
       @extend %button--border--primary;

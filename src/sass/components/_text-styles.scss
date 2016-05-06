@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// Text styles
+// use as @extend
+// -----------------------------------------------------------------------------
+
+%title-highlight {
+  @extend %font-heading;
+  @extend %font-size-highlight;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
