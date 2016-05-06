@@ -6,6 +6,35 @@
 %title-highlight {
   @extend %font-heading;
   @extend %font-size-highlight;
+  position: relative;
+  padding-bottom: $block-padder-medium;
+  line-height: 36px;
   letter-spacing: -0.025em;
   text-transform: uppercase;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background: repeat-y center top/100% 36px;
+  }
+
+  @include breakpoint('medium') {
+    line-height: 60px;
+
+    &::after {
+      top: 6px;
+      background-size: 100% 60px;
+    }
+  }
 }

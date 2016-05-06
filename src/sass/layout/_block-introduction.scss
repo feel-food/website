@@ -15,12 +15,16 @@
 
   &--title {
     @extend %title-highlight;
+    max-width: 200px;
     color: get-color('text', 'base-reversed');
-    max-width: 240px;
     text-align: center;
 
+    &::after {
+      background-image: url(../images/backgrounds/title-highlight-introduction-entreprise.png);
+    }
+
     @include breakpoint('medium') {
-      max-width: 440px;
+      max-width: 460px;
     }
   }
 }
