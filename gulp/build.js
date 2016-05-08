@@ -1,22 +1,19 @@
 'use strict';
 
 var gulp = require('gulp');
-var del  = require('del');
 
 module.exports = function(options) {
 
     var params = options.params;
-
-    // Clean CSS
-    gulp.task('build', ['clean:build', 'images'], function() {
+    
+    gulp.task('build', ['clean:build', 'images', 'favicons', 'icons', 'styles', 'scripts'], function() {
 
         return gulp.src([
             options.src + '/{*,**}',
             '!' + options.src + '/_favicon.txt',
-            '!' + options.src + '/icons{,/*,**}',
-            '!' + options.src + '/images{,/*,**}',
-            '!' + options.src + '/sass{,/*,**}'
-            //options.src + '/*.{html,php}'
+            '!' + options.src + '/icons{,/*,/**}',
+            '!' + options.src + '/images{,/*,/**}',
+            '!' + options.src + '/sass{,/*,/**}'
         ]).pipe(gulp.dest(options.build));
 
     });

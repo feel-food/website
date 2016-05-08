@@ -6,7 +6,7 @@ var glob  = require('glob');
 
 var options = {
     src         : 'src',
-    dist        : 'src/dist',
+    dist        : 'dist',
     build       : 'build',
     tmp         : '.tmp',
     e2e         : 'e2e',
@@ -22,7 +22,8 @@ var options = {
         appVersion         : '1.0.0',
         developerName      : 'Yann Lombard',
         developerURL       : 'http://yannlombard.fr/',
-        faviconsPath       : './favicon/',
+        faviconsPath       : 'dist/favicon/',
+        faviconsFolder     : 'favicon',
         faviconsIncludePath: 'src/_favicon.txt',
         tasksPath          : {
             source     : {

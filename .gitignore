@@ -22,3 +22,6 @@ build
 src/dist/css
 src/dist/favicon
 src/dist/images
+
+# keys.json #
+keys.json

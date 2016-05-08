@@ -8,7 +8,7 @@ module.exports = function(options) {
     var params = options.params;
 
     // Watcher
-    gulp.task('watch', function() {
+    gulp.task('watch', ['styles', 'images', 'scripts', 'icons'], function() {
         livereload.listen();
         gulp.watch('*.svg', {cwd: params.tasksPath.source.icons}, ['icons']);
         gulp.watch('**/*.scss', {cwd: params.tasksPath.source.sassDir}, ['styles']);

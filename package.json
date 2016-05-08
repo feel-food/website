@@ -31,6 +31,7 @@
     "gulp-watch": "latest",
     "lodash": "latest",
     "node-sass": "latest",
-    "run-sequence": "latest"
+    "run-sequence": "latest",
+    "vinyl-ftp": "^0.4.5"
   }
 }

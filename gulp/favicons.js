@@ -2,20 +2,21 @@
 
 var gulp     = require('gulp');
 var favicons = require('gulp-favicons');
+var path     = require('path');
 
 module.exports = function(options) {
 
     var params = options.params;
 
     // Favicon generation
-    gulp.task('favicons', function() {
+    gulp.task('favicons', ['clean:favicons'], function() {
         return gulp.src(params.tasksPath.source.favicon)
             .pipe(
                 favicons({
                     appName    : params.siteName, // Your application's name. `string`
                     background : '#fff', // Background colour for flattened icons. `string`
-                    path       : params.faviconsPath,      // Path for overriding default icons path. `string`
-                    url        : params.faviconsPath,       // Absolute URL for OpenGraph image. `string`
+                    path       : path.join(options.dist, params.faviconsFolder),      // Path for overriding default icons path. `string`
+                    url        : path.join(options.dist, params.faviconsFolder),       // Absolute URL for OpenGraph image. `string`
                     display    : 'standalone', // Android display: "browser" or "standalone". `string`
                     orientation: 'portrait', // Android orientation: "portrait" or "landscape". `string`
                     version    : params.appVersion, // Your application's version number. `number`
