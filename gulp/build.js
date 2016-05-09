@@ -13,7 +13,8 @@ module.exports = function(options) {
             '!' + options.src + '/_favicon.txt',
             '!' + options.src + '/icons{,/*,/**}',
             '!' + options.src + '/images{,/*,/**}',
-            '!' + options.src + '/sass{,/*,/**}'
+            '!' + options.src + '/sass{,/*,/**}',
+            '!' + options.src + '/scripts{,/*,/**}'
         ]).pipe(gulp.dest(options.build));
 
     });
