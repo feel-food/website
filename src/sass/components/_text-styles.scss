@@ -31,6 +31,15 @@
   }
 
   @include breakpoint('medium') {
+    line-height: 46px;
+
+    &::after {
+      top: 5px;
+      background-size: 100% 46px;
+    }
+  }
+
+  @include breakpoint('large') {
     line-height: 60px;
 
     &::after {

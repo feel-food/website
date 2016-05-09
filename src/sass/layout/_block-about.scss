@@ -3,15 +3,9 @@
 // -----------------------------------------------------------------------------
 
 .block-about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 635px;
-  background: url(../images/backgrounds/02_FeelFood_6_ENTREPRISE_bloc1-adoptez2.jpg) no-repeat center/cover;
-
-  @include breakpoint('medium') {
-    height: 900px;
-  }
+  @extend %strate-std;
+  background: url(../images/backgrounds/02_FeelFood_6_ENTREPRISE_bloc1-adoptez2.jpg) no-repeat center;
+  background-size: cover;
 
   &--content {
     @extend %container;
@@ -32,13 +26,17 @@
   &--title {
     @extend %title-highlight;
     color: get-color('text', 'base-reversed');
-    max-width: 195px;
+    max-width: 194px;
 
     &::after {
       background-image: url(../images/backgrounds/title-highlight-about.png);
     }
 
     @include breakpoint('medium') {
+      max-width: 252px;
+    }
+
+    @include breakpoint('large') {
       max-width: 310px;
     }
   }

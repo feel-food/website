@@ -3,22 +3,23 @@
 // -----------------------------------------------------------------------------
 
 .block-introduction {
+  @extend %strate-std;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 586px;
-  background: url(../images/backgrounds/01_FeelFood_6_ENTREPRISE_homepa.jpg) no-repeat center/cover;
-
-  @include breakpoint('medium') {
-    height: 770px;
-  }
+  background: url(../images/backgrounds/01_FeelFood_6_ENTREPRISE_homepa.jpg) no-repeat center;
+  background-size: cover;
 
   &--content {
     @extend %container;
-    max-width: 220px;
+    max-width: 230px;
     text-align: center;
 
     @include breakpoint('medium') {
+      max-width: 400px;
+    }
+
+    @include breakpoint('large') {
       max-width: 500px;
     }
   }

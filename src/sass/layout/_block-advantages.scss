@@ -1,0 +1,262 @@
+// -----------------------------------------------------------------------------
+// Block advantages
+// -----------------------------------------------------------------------------
+
+$bg-color: #f4e8e1;
+
+.block-advantages {
+  @extend %strate-std;
+  padding-top: ($block-padder-larger * 2);
+  background: url(../images/backgrounds/03_FeelFood_6_ENTREPRISE_bloc2-pourquoi.jpg) no-repeat center $bg-color;
+  background-size: cover;
+
+  &--content {
+    @extend %container;
+  }
+
+  &--col {
+    @extend %clearfix;
+    text-align: right;
+    
+    @include breakpoint('medium') {
+      float: right;
+      max-width: 50%;
+    }
+
+    @include breakpoint('large') {
+      max-width: 40%;
+    }
+  }
+
+  &--title,
+  &--subtitle {
+    clear: right;
+    float: right;
+    padding-right: ($block-padder-medium * 1.5);
+    padding-left: ($block-padder-medium * 1.5);
+
+    @include breakpoint('medium') {
+      float: none;
+      display: inline-block;
+      padding-right: $block-padder;
+      padding-left: $block-padder;
+    }
+  }
+
+  &--title {
+    @extend %title-highlight;
+    color: get-color('theme', 'primary');
+    max-width: 230px;
+
+    &::after {
+      background-image: url(../images/backgrounds/title-highlight-advantages.png);
+    }
+
+    @include breakpoint('medium') {
+      max-width: 340px;
+    }
+
+    @include breakpoint('large') {
+      max-width: 370px;
+    }
+  }
+
+  &--subtitle {
+    @extend %title-medium;
+    max-width: 190px;
+    color: get-color('text', 'soft');
+
+    @include breakpoint('medium') {
+      max-width: 240px;
+    }
+
+    @include breakpoint('large') {
+      max-width: 270px;
+    }
+  }
+  
+  &--list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 260px;
+
+    @include breakpoint('large') {
+      width: 500px;
+    }
+  }
+  
+  &--item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: $block-padder;
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    text-align: center;
+
+    @include breakpoint('large') {
+      margin: 0 $block-margin-before;
+      padding: $block-padder ($block-padder-medium * 3);
+      width: 200px;
+      height: 200px;
+    }
+
+    &:first-child {
+      margin-top: - ($block-margin-before * 2);
+      width: 145px;
+      height: 145px;
+
+      @include breakpoint('medium') {
+        margin-top: 0;
+      }
+
+      @include breakpoint('large') {
+        padding: $block-padder ($block-padder-larger);
+        height: 240px;
+        width: 240px;
+      }
+
+      p strong {
+        @include pxtorem(15px, 15px);
+
+        @include breakpoint('large') {
+          @include pxtorem(24px, 24px);
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      margin-top: ($block-margin-before * 3);
+      margin-left: - ($block-margin-before);
+      width: 130px;
+      height: 130px;
+
+      @include breakpoint('medium') {
+        margin-top: ($block-margin-before * 6);
+      }
+
+      @include breakpoint('large') {
+        margin-top: ($block-margin-before * 8);
+        padding: $block-padder ($block-padder-larger);
+        width: 220px;
+        height: 220px;
+      }
+
+      p strong {
+        @include pxtorem(13px, 13px);
+
+        @include breakpoint('large') {
+          @include pxtorem(22px, 22px);
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      margin-top: (- $block-margin-before * 3);
+      margin-left: ($block-padder);
+      width: 100px;
+      height: 100px;
+
+      @include breakpoint('large') {
+        margin-top: (- $block-margin-before * 5);
+        margin-left: ($block-padder * 3);
+        width: 165px;
+        height: 165px;
+      }
+
+      p strong {
+        @include pxtorem(10px, 10px);
+
+        @include breakpoint('large') {
+          @include pxtorem(16px, 16px);
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      margin-top: ($block-margin-before);
+      margin-left: - ($block-margin-before / 2);
+      width: 110px;
+      height: 110px;
+
+      @include breakpoint('large') {
+        margin-top: ($block-margin-before);
+        margin-left: ($block-margin-before);
+        width: 180px;
+        height: 180px;
+      }
+
+      p strong {
+        @include pxtorem(11px, 11px);
+
+        @include breakpoint('large') {
+          @include pxtorem(18px, 18px);
+        }
+      }
+    }
+
+    p {
+      @include pxtorem(8px, 10px);
+      position: relative;
+      z-index: 2;
+      color: get-color('text', 'secondary');
+
+      @include breakpoint('large') {
+        @include pxtorem(13px, 16px);
+      }
+
+      strong {
+        @extend %title-medium;
+        margin-bottom: $text-margin-smaller;
+        display: block;
+        color: get-color('theme', 'primary');
+        background: $gradient-std;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+        .restaurateur & {
+          background: $gradient-reversed;
+        }
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      border-radius: 100%;
+    }
+
+    &::before {
+      z-index: 0;
+      background: $gradient-std;
+      
+      .restaurateur & {
+        background: $gradient-reversed;
+      }
+    }
+
+    &::after {
+      z-index: 1;
+      top: 3px;
+      right: 3px;
+      bottom: 3px;
+      left: 3px;
+      background-color: $bg-color;
+
+      @include breakpoint('large') {
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+        left: 6px;
+      }
+    }
+  }
+}

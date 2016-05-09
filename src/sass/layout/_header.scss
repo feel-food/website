@@ -15,24 +15,39 @@
     height: map-get($header-height, 'medium');
   }
 
+  @include breakpoint('large') {
+    height: map-get($header-height, 'large');
+  }
+
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: - 20px;
     left: 0;
     right: 0;
     z-index: -1;
-    height: 180px;
-    background: linear-gradient(to bottom, #060506 0%, rgba(#060506, 0) 100%);
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(#060506, 0.5) 0%, rgba(#060506, 0) 100%);
+
+    @include breakpoint('medium') {
+      top: 0;
+      height: 120px;
+    }
+
+    @include breakpoint('large') {
+      height: 180px;
+    }
   }
 
   .container {
     @extend %clearfix;
     @extend %container;
+    position: relative;
+    z-index: 1;
     max-width: map-get($site-range, 'max') + px;
     padding: $block-padder 0 $block-padder $block-padder;
 
-    @include breakpoint('medium') {
+    @include breakpoint('large') {
       padding: $block-padder-larger;
     }
   }

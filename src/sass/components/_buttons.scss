@@ -60,11 +60,11 @@
 
   &--gradient--std {
     @extend %button--gradient;
-    background: linear-gradient(117deg, get-color('theme', 'primary') 0%, get-color('theme', 'secondary') 100%);
+    background: $gradient-std;
   }
 
   &--gradient--reversed {
     @extend %button--gradient;
-    background: linear-gradient(117deg, get-color('theme', 'secondary') 0%, get-color('theme', 'primary') 100%);
+    background: $gradient-reversed;
   }
 }
