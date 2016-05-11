@@ -6,11 +6,81 @@ $bg-color: get-color('block', 'base-reversed');
 
 .block-app {
   @extend %strate-std;
+  padding-bottom: ($block-padder-larger * 5);
+  min-height: 650px;
+  overflow: hidden;
   background: url(../images/backgrounds/04_FeelFood_6_ENTREPRISE_bloc3-app02--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
   
   @include breakpoint('medium') {
     background-image: url(../images/backgrounds/04_FeelFood_6_ENTREPRISE_bloc3-app2.jpg);
+  }
+
+  &--visual {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+
+    &.back {
+      margin-left: -50px;
+      bottom: -70px;
+      width: 190px;
+      height: 190px;
+      background: url(../images/backgrounds/mobileapp-02.png) no-repeat left;
+      background-size: 100% auto;
+
+      @include breakpoint('medium') {
+        margin-left: 140px;
+        bottom: 0;
+        width: 220px;
+        height: 220px;
+      }
+
+      @include breakpoint('large') {
+        margin-left: 240px;
+        bottom: 0;
+        width: 330px;
+        height: 330px;
+      }
+    }
+
+    &.front {
+      z-index: 2;
+      bottom: -10px;
+      margin-left: -150px;
+      width: 320px;
+      height: 210px;
+      background: url(../images/backgrounds/mobileapp-01.png) no-repeat left;
+      background-size: 100% auto;
+
+      @include breakpoint('medium') {
+        bottom: 0;
+        margin-left: 0px;
+        width: 360px;
+        height: 386px;
+      }
+
+      @include breakpoint('large') {
+        bottom: 0;
+        margin-left: 20px;
+        width: 540px;
+        height: 580px;
+      }
+    }
+
+    /*background-size: 100% auto;
+
+    @include breakpoint('medium') {
+      margin-left: -160px;
+      width: 435px;
+      height: 253px;
+    }
+
+    @include breakpoint('large') {
+      width: 622px;
+      height: 362px;
+    }*/
   }
 
   &--content {
