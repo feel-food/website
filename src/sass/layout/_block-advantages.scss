@@ -289,7 +289,7 @@ $bg-color: #f4e8e1;
         margin-bottom: $text-margin-smaller;
         display: block;
         color: get-color('theme', 'primary');
-        background: $gradient-std;
+        background: -webkit-#{$gradient-std};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -351,6 +351,17 @@ $bg-color: #f4e8e1;
   // Page restaurateurs
   @include when-inside('.restaurateurs') {
 
+    .block-advantages--visual {
+
+      @include breakpoint('medium') {
+        margin-left: -260px;
+      }
+
+      @include breakpoint('large') {
+        margin-left: -460px;
+      }
+    }
+
     .block-advantages--col {
 
       @include breakpoint('medium') {
@@ -358,8 +369,7 @@ $bg-color: #f4e8e1;
       }
 
       @include breakpoint('large') {
-        padding-top: $block-padder-larger * 2;
-        max-width: 48%;
+        max-width: 44%;
       }
     }
 
@@ -371,29 +381,34 @@ $bg-color: #f4e8e1;
       }
 
       @include breakpoint('large') {
-        max-width: 435px;
+        max-width: 395px;
       }
     }
 
     .block-advantages--list {
 
       @include breakpoint('large') {
-        width: 470px;
+        width: 510px;
       }
     }
 
     .block-advantages--item {
 
       p strong {
-        background: $gradient-reversed;
+        background: -webkit-#{$gradient-reversed};
         -webkit-background-clip: text;
       }
 
       &:first-child {
         margin-top: 0;
 
+        @include breakpointBetween('medium', 'large') {
+          padding-right: ($block-padder-medium * 3);
+          padding-left: ($block-padder-medium * 3);
+        }
+
         @include breakpoint('large') {
-          margin-top: 60px;
+          margin-top: ($block-margin-before * 2);
         }
       }
 
@@ -405,14 +420,14 @@ $bg-color: #f4e8e1;
 
         @include breakpoint('medium') {
           margin-left: 160px;
-          margin-top: - ($block-margin-before * 2);
+          margin-top: - ($block-margin-before * 3);
           width: 120px;
           height: 120px;
         }
 
         @include breakpoint('large') {
-          margin-left: 290px;
-          margin-top: - 200px;
+          margin-left: 300px;
+          margin-top: -240px;
           width: 165px;
           height: 165px;
         }
@@ -435,12 +450,13 @@ $bg-color: #f4e8e1;
         margin-left: ($block-margin-before / 2);
 
         @include breakpoint('medium') {
-          margin-top: -60px;
+          margin-top: -40px;
+          margin-left: 10px;
         }
 
         @include breakpoint('large') {
-          margin-top: ($block-margin-before);
-          margin-left: ($block-margin-before / 2);
+          margin-top: ($block-margin-before * 2);
+          margin-left: ($block-margin-before * 2);
         }
       }
 
@@ -457,8 +473,8 @@ $bg-color: #f4e8e1;
         }
 
         @include breakpoint('large') {
-          margin-top: (- $block-margin-before);
-          margin-left: ($block-margin-before * 1.5);
+          margin-top: (- $block-margin-before * 2);
+          margin-left: ($block-margin-before);
           width: 220px;
           height: 220px;
         }
@@ -481,13 +497,13 @@ $bg-color: #f4e8e1;
         margin-left: ($block-margin-before * 5);
 
         @include breakpoint('medium') {
-          margin-top: - ($block-margin-before * 3);
-          margin-left: $block-margin-before;
+          left: 200px;
+          margin-top: -120px;
         }
 
         @include breakpoint('large') {
-          margin-top: - $block-margin-before;
-          margin-left: ($block-margin-before * 5);
+          margin-top: - ($block-margin-before * 5);
+          left: 380px;
         }
       }
     }

@@ -4,3 +4,5 @@
 
 $gradient-std: linear-gradient(117deg, get-color('theme', 'primary') 0%, get-color('theme', 'secondary') 100%);
 $gradient-reversed: linear-gradient(117deg, get-color('theme', 'secondary') 0%, get-color('theme', 'primary') 100%);
+
+$gradient-primary: linear-gradient(117deg, get-color('theme', 'primary') 0%, get-color('theme', 'primary') 100%);
