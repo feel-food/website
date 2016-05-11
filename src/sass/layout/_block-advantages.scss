@@ -7,11 +7,40 @@ $bg-color: #f4e8e1;
 .block-advantages {
   @extend %strate-std;
   padding-top: ($block-padder-larger * 2);
-  background: url(../images/backgrounds/03_FeelFood_6_ENTREPRISE_bloc2-pourquoi.jpg) no-repeat center $bg-color;
+  overflow: hidden;
+  background: url(../images/backgrounds/03_FeelFood_6_ENTREPRISE_bloc2-pourquoi--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
+
+  @include breakpoint('medium') {
+    background-image: url(../images/backgrounds/03_FeelFood_6_ENTREPRISE_bloc2-pourquoi.jpg);
+  }
+
+  &--visual {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    z-index: 1;
+    margin-left: -240px;
+    width: 360px;
+    height: 210px;
+    background: url(../images/backgrounds/tomato.png) no-repeat center bottom;
+    background-size: 100% auto;
+
+    @include breakpoint('medium') {
+      margin-left: -160px;
+      width: 435px;
+      height: 253px;
+    }
+
+    @include breakpoint('large') {
+      width: 622px;
+      height: 362px;
+    }
+  }
 
   &--content {
     @extend %container;
+    z-index: 0;
   }
 
   &--col {
@@ -20,10 +49,12 @@ $bg-color: #f4e8e1;
     
     @include breakpoint('medium') {
       float: right;
+      padding-top: $block-padder;
       max-width: 50%;
     }
 
     @include breakpoint('large') {
+      padding-top: $block-padder-larger;
       max-width: 40%;
     }
   }
@@ -46,18 +77,18 @@ $bg-color: #f4e8e1;
   &--title {
     @extend %title-highlight;
     color: get-color('theme', 'primary');
-    max-width: 230px;
+    max-width: 228px;
 
     &::after {
       background-image: url(../images/backgrounds/title-highlight-advantages.png);
     }
 
     @include breakpoint('medium') {
-      max-width: 340px;
+      max-width: 298px;
     }
 
     @include breakpoint('large') {
-      max-width: 370px;
+      max-width: 368px;
     }
   }
 
@@ -76,12 +107,19 @@ $bg-color: #f4e8e1;
   }
   
   &--list {
+    position: relative;
+    top: - ($block-margin-before);
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 260px;
+    width: 280px;
+
+    @include breakpoint('medium') {
+      top: 0;
+    }
 
     @include breakpoint('large') {
+      margin-left: 0;
       width: 500px;
     }
   }
@@ -90,11 +128,16 @@ $bg-color: #f4e8e1;
     position: relative;
     display: flex;
     align-items: center;
+    margin: 0 ($block-margin-before / 4);
     padding: $block-padder;
     width: 120px;
     height: 120px;
     box-sizing: border-box;
     text-align: center;
+
+    @include breakpoint('medium') {
+      margin: 0;
+    }
 
     @include breakpoint('large') {
       margin: 0 $block-margin-before;
@@ -110,6 +153,8 @@ $bg-color: #f4e8e1;
 
       @include breakpoint('medium') {
         margin-top: 0;
+        height: 160px;
+        width: 160px;
       }
 
       @include breakpoint('large') {
@@ -120,6 +165,10 @@ $bg-color: #f4e8e1;
 
       p strong {
         @include pxtorem(15px, 15px);
+
+        @include breakpoint('medium') {
+          @include pxtorem(18px, 18px);
+        }
 
         @include breakpoint('large') {
           @include pxtorem(24px, 24px);
@@ -135,6 +184,8 @@ $bg-color: #f4e8e1;
 
       @include breakpoint('medium') {
         margin-top: ($block-margin-before * 6);
+        width: 140px;
+        height: 140px;
       }
 
       @include breakpoint('large') {
@@ -146,6 +197,10 @@ $bg-color: #f4e8e1;
 
       p strong {
         @include pxtorem(13px, 13px);
+
+        @include breakpoint('medium') {
+          @include pxtorem(15px, 15px);
+        }
 
         @include breakpoint('large') {
           @include pxtorem(22px, 22px);
@@ -159,6 +214,11 @@ $bg-color: #f4e8e1;
       width: 100px;
       height: 100px;
 
+      @include breakpoint('medium') {
+        width: 120px;
+        height: 120px;
+      }
+
       @include breakpoint('large') {
         margin-top: (- $block-margin-before * 5);
         margin-left: ($block-padder * 3);
@@ -168,6 +228,10 @@ $bg-color: #f4e8e1;
 
       p strong {
         @include pxtorem(10px, 10px);
+
+        @include breakpoint('medium') {
+          @include pxtorem(12px, 12px);
+        }
 
         @include breakpoint('large') {
           @include pxtorem(16px, 16px);
@@ -181,6 +245,11 @@ $bg-color: #f4e8e1;
       width: 110px;
       height: 110px;
 
+      @include breakpoint('medium') {
+        width: 130px;
+        height: 130px;
+      }
+
       @include breakpoint('large') {
         margin-top: ($block-margin-before);
         margin-left: ($block-margin-before);
@@ -190,6 +259,10 @@ $bg-color: #f4e8e1;
 
       p strong {
         @include pxtorem(11px, 11px);
+
+        @include breakpoint('medium') {
+          @include pxtorem(13px, 13px);
+        }
 
         @include breakpoint('large') {
           @include pxtorem(18px, 18px);
@@ -202,6 +275,10 @@ $bg-color: #f4e8e1;
       position: relative;
       z-index: 2;
       color: get-color('text', 'secondary');
+
+      @include breakpoint('medium') {
+        @include pxtorem(12px, 14px);
+      }
 
       @include breakpoint('large') {
         @include pxtorem(13px, 16px);
@@ -250,6 +327,13 @@ $bg-color: #f4e8e1;
       bottom: 3px;
       left: 3px;
       background-color: $bg-color;
+
+      @include breakpoint('medium') {
+        top: 4px;
+        right: 4px;
+        bottom: 4px;
+        left: 4px;
+      }
 
       @include breakpoint('large') {
         top: 6px;

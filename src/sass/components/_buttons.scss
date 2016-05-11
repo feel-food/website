@@ -39,16 +39,34 @@
   &--border--std {
     @extend %button--border;
     color: get-color('text', 'base');
+
+    &:hover {
+      border-color: get-color('block', 'base-reversed');
+      color: get-color('text', 'base-reversed');
+      background-color: get-color('block', 'base-reversed');
+    }
   }
 
   &--border--reversed {
     @extend %button--border;
     color: get-color('text', 'base-reversed');
+
+    &:hover {
+      border-color: get-color('block', 'base');
+      color: get-color('text', 'base');
+      background-color: get-color('block', 'base');
+    }
   }
 
   &--border--primary {
     @extend %button--border;
     color: get-color('theme', 'primary');
+
+    &:hover {
+      border-color: get-color('theme', 'primary');
+      color: get-color('text', 'base-reversed');
+      background-color: get-color('theme', 'primary');
+    }
   }
 
   // Gradient buttons

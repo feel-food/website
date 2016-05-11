@@ -2,13 +2,19 @@
 // Block introduction
 // -----------------------------------------------------------------------------
 
+$bg-color: get-color('block', 'base-reversed');
+
 .block-introduction {
   @extend %strate-std;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../images/backgrounds/01_FeelFood_6_ENTREPRISE_homepa.jpg) no-repeat center;
+  background: url(../images/backgrounds/01_FeelFood_6_ENTREPRISE_homepa--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
+
+  @include breakpoint('medium') {
+    background-image: url(../images/backgrounds/01_FeelFood_6_ENTREPRISE_homepa.jpg);
+  }
 
   &--content {
     @extend %container;

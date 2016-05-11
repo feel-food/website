@@ -2,10 +2,16 @@
 // Block about
 // -----------------------------------------------------------------------------
 
+$bg-color: #ab653f;
+
 .block-about {
   @extend %strate-std;
-  background: url(../images/backgrounds/02_FeelFood_6_ENTREPRISE_bloc1-adoptez2.jpg) no-repeat center;
+  background: url(../images/backgrounds/02_FeelFood_6_ENTREPRISE_bloc1-adoptez2--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
+
+  @include breakpoint('medium') {
+    background-image: url(../images/backgrounds/02_FeelFood_6_ENTREPRISE_bloc1-adoptez2.jpg);
+  }
 
   &--content {
     @extend %container;
@@ -25,8 +31,8 @@
 
   &--title {
     @extend %title-highlight;
-    color: get-color('text', 'base-reversed');
     max-width: 194px;
+    color: get-color('text', 'base-reversed');
 
     &::after {
       background-image: url(../images/backgrounds/title-highlight-about.png);

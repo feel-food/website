@@ -82,6 +82,7 @@
 
   &.reversed {
     background: get-color('block', 'base');
+    box-shadow: 0 0 15px 0 rgba(get-color('block', 'base-reversed'), 0.15);
 
     &::before {
       display: none;
