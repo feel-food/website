@@ -19,10 +19,13 @@ $text-margin-small:				6px;
 $text-margin-smaller:			3px;
 
 // Forms
-$form-field-height:             60px;
+$form-field-height: (
+    'std': 38px,
+    'medium': 60px
+);
 
 $header-height: (
   'std': 78px,
   'medium': 100px,
   'large': 140px
-)
+);

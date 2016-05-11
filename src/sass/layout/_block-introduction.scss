@@ -18,11 +18,11 @@ $bg-color: get-color('block', 'base-reversed');
 
   &--content {
     @extend %container;
-    max-width: 230px;
+    max-width: 240px;
     text-align: center;
 
     @include breakpoint('medium') {
-      max-width: 400px;
+      max-width: 410px;
     }
 
     @include breakpoint('large') {
@@ -48,7 +48,6 @@ $bg-color: get-color('block', 'base-reversed');
     }
   }
 
-
   &--action {
     @extend %button--border--reversed;
     margin-top: $text-margin-large;
@@ -56,6 +55,37 @@ $bg-color: get-color('block', 'base-reversed');
 
     @include breakpoint('large') {
       display: none;
+    }
+  }
+
+  // Page restaurateurs
+  @include when-inside('.restaurateurs') {
+    background-image: url(../images/backgrounds/08_FeelFood_6_RESTAURATEUR_homepa2--mobile.jpg);
+
+    @include breakpoint('medium') {
+      background-image: url(../images/backgrounds/08_FeelFood_6_RESTAURATEUR_homepa2.jpg);
+    }
+
+    .block-introduction--content {
+
+      @include breakpointBetween('small', 'medium') {
+        max-width: 320px;
+      }
+    }
+
+    .block-introduction--title {
+
+      &::after {
+        background-image: url(../images/backgrounds/title-highlight-introduction-restaurateurs.png);
+      }
+    }
+
+    .block-introduction--desc {
+
+      @include breakpointBetween('small', 'medium') {
+        max-width: 240px;
+        margin: 0 auto;
+      }
     }
   }
 }

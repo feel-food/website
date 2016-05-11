@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// Block actions
+// -----------------------------------------------------------------------------
+
+$bg-color: #fbefe8;
+
+.block-actions {
+  @extend %strate-std;
+  min-height: 425px;
+  background: url(../images/backgrounds/05_FeelFood_6_ENTREPRISE_bloc4-calltoaction4--mobile.jpg) no-repeat center $bg-color;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    background-image: url(../images/backgrounds/05_FeelFood_6_ENTREPRISE_bloc4-calltoaction4.jpg);
+  }
+
+  @include breakpoint('large') {
+    min-height: 440px;
+  }
+
+  &--content {
+    @extend %container;
+    max-width: 310px;
+    text-align: center;
+
+    @include breakpoint('medium') {
+      max-width: 490px;
+    }
+
+    @include breakpoint('large') {
+      max-width: 610px;
+    }
+  }
+
+  &--title {
+    @extend %title-highlight;
+    color: get-color('theme', 'primary');
+
+    &::after {
+      background-image: url(../images/backgrounds/title-highlight-actions.png);
+    }
+  }
+
+  &--form {
+
+    .form-item,
+    .form-actions {
+
+      @include breakpoint('large') {
+        float: left;
+        margin-bottom: 0;
+      }
+    }
+
+    .form-item {
+
+      @include breakpoint('large') {
+        width: 340px;
+        margin-right: $text-margin-small;
+      }
+    }
+
+    .form-text {
+      width: 100%;
+      border: 1px solid #e2d7d9;
+    }
+
+    .form-submit {
+      width: 100%;
+    }
+  }
+}

@@ -79,4 +79,36 @@ $bg-color: #ab653f;
       margin-top: (- $block-margin-before * 4);
     }
   }
+
+  // Page restaurateurs
+  @include when-inside('.restaurateurs') {
+    background-image: url(../images/backgrounds/09_FeelFood_6_RESTAURATEUR_bloc1-concept--mobile.jpg);
+
+    @include breakpoint('medium') {
+      background-image: url(../images/backgrounds/09_FeelFood_6_RESTAURATEUR_bloc1-concept.jpg);
+    }
+
+    .block-about--title {
+      max-width: 210px;
+
+      @include breakpoint('medium') {
+        max-width: 275px;
+      }
+
+      @include breakpoint('large') {
+        max-width: 340px;
+      }
+    }
+
+    .block-about--subtitle {
+
+      @include breakpoint('medium') {
+        width: 370px;
+      }
+
+      @include breakpoint('large') {
+        width: 450px;
+      }
+    }
+  }
 }

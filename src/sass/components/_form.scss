@@ -1,0 +1,89 @@
+// -----------------------------------------------------------------------------
+// Form common components
+// -----------------------------------------------------------------------------
+
+// Form elem
+.form-item {
+  @extend %font-size-std;
+  margin-bottom: ($block-margin-after / 2);
+
+  // label
+  label {
+    @extend %visually-hidden;
+  }
+
+  .form-text,
+  .form-textarea,
+  .form-select {
+    //@extend %form-field;
+    @extend %font-std;
+    @extend %font-size-std;
+    display: block;
+    max-width: 100%;
+    height: map-get($form-field-height, 'std');
+    padding: $block-padder-medium $block-padder;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 6px;
+    color: get-color('text', 'soft');
+    background-color: get-color('block', 'base');
+
+    // iOs friends
+    box-shadow: none;
+    -webkit-appearance: none;
+
+    @include breakpoint('medium') {
+      padding: $block-padder;
+      height: map-get($form-field-height, 'medium');
+    }
+
+    &:focus {
+
+    }
+  }
+
+  .form-select {
+    -webkit-appearance: menulist-button;
+
+    &[multiple="multiple"] {
+      min-height: 70px;
+    }
+  }
+
+  .form-radio {
+    display: inline-block;
+    margin: 0 $text-margin-smaller 0 0;
+    vertical-align: middle;
+  }
+
+  .form-checkbox {
+    display: inline-block;
+    margin: 0 $text-margin-smaller 0 0;
+    vertical-align: middle;
+  }
+}
+
+// Checkboxes and radios group
+.form-checkboxes,
+.form-radios {
+
+  .form-item {
+    display: inline-block;
+    margin: $text-margin-smaller $text-margin $text-margin-smaller 0;
+  }
+}
+
+
+// Actions zone
+.form-actions {
+
+  .form-submit {
+    @extend %button--gradient--std;
+
+    @include breakpoint('medium') {
+      height: map-get($form-field-height, 'medium');
+      padding-left: $block-padder;
+      padding-right: $block-padder;
+    }
+  }
+}

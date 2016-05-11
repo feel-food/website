@@ -285,15 +285,20 @@ $bg-color: #f4e8e1;
 
       strong {
         @extend %title-medium;
+        @include pxtorem(11px, 11px);
         margin-bottom: $text-margin-smaller;
         display: block;
         color: get-color('theme', 'primary');
         background: $gradient-std;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        
-        .restaurateur & {
-          background: $gradient-reversed;
+
+        @include breakpoint('medium') {
+          @include pxtorem(13px, 13px);
+        }
+
+        @include breakpoint('large') {
+          @include pxtorem(18px, 18px);
         }
       }
     }
@@ -339,6 +344,151 @@ $bg-color: #f4e8e1;
         right: 6px;
         bottom: 6px;
         left: 6px;
+      }
+    }
+  }
+
+  // Page restaurateurs
+  @include when-inside('.restaurateurs') {
+
+    .block-advantages--col {
+
+      @include breakpoint('medium') {
+        max-width: 53%;
+      }
+
+      @include breakpoint('large') {
+        padding-top: $block-padder-larger * 2;
+        max-width: 48%;
+      }
+    }
+
+    .block-advantages--title {
+      max-width: 245px;
+
+      @include breakpoint('medium') {
+        max-width: 320px;
+      }
+
+      @include breakpoint('large') {
+        max-width: 435px;
+      }
+    }
+
+    .block-advantages--list {
+
+      @include breakpoint('large') {
+        width: 470px;
+      }
+    }
+
+    .block-advantages--item {
+
+      p strong {
+        background: $gradient-reversed;
+        -webkit-background-clip: text;
+      }
+
+      &:first-child {
+        margin-top: 0;
+
+        @include breakpoint('large') {
+          margin-top: 60px;
+        }
+      }
+
+      &:nth-child(2) {
+        margin-top: ($block-margin-before / 2);
+        margin-left: ($block-margin-before / 2);
+        width: 100px;
+        height: 100px;
+
+        @include breakpoint('medium') {
+          margin-left: 160px;
+          margin-top: - ($block-margin-before * 2);
+          width: 120px;
+          height: 120px;
+        }
+
+        @include breakpoint('large') {
+          margin-left: 290px;
+          margin-top: - 200px;
+          width: 165px;
+          height: 165px;
+        }
+
+        p strong {
+          @include pxtorem(10px, 10px);
+
+          @include breakpoint('medium') {
+            @include pxtorem(12px, 12px);
+          }
+
+          @include breakpoint('large') {
+            @include pxtorem(16px, 16px);
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        margin-top: ($block-margin-before);
+        margin-left: ($block-margin-before / 2);
+
+        @include breakpoint('medium') {
+          margin-top: -60px;
+        }
+
+        @include breakpoint('large') {
+          margin-top: ($block-margin-before);
+          margin-left: ($block-margin-before / 2);
+        }
+      }
+
+      &:nth-child(4) {
+        margin-top: (- $block-margin-before);
+        margin-left: ($block-margin-before / 2);
+        width: 130px;
+        height: 130px;
+
+        @include breakpoint('medium') {
+          margin-top: $block-margin-before;
+          width: 140px;
+          height: 140px;
+        }
+
+        @include breakpoint('large') {
+          margin-top: (- $block-margin-before);
+          margin-left: ($block-margin-before * 1.5);
+          width: 220px;
+          height: 220px;
+        }
+
+        p strong {
+          @include pxtorem(13px, 13px);
+
+          @include breakpoint('medium') {
+            @include pxtorem(15px, 15px);
+          }
+
+          @include breakpoint('large') {
+            @include pxtorem(22px, 22px);
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        margin-top: 0;
+        margin-left: ($block-margin-before * 5);
+
+        @include breakpoint('medium') {
+          margin-top: - ($block-margin-before * 3);
+          margin-left: $block-margin-before;
+        }
+
+        @include breakpoint('large') {
+          margin-top: - $block-margin-before;
+          margin-left: ($block-margin-before * 5);
+        }
       }
     }
   }
