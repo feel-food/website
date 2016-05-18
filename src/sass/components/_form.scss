@@ -15,7 +15,6 @@
   .form-text,
   .form-textarea,
   .form-select {
-    //@extend %form-field;
     @extend %font-std;
     @extend %font-size-std;
     display: block;
