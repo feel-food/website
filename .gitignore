@@ -15,6 +15,7 @@ Thumbs.db
 .sass-cache
 .tmp
 node_modules
+bower_components
 
 # DIST & BUILD & GENERATED FILES #
 src/sass/components/_icons.scss
@@ -22,6 +23,8 @@ build
 src/dist/css
 src/dist/favicon
 src/dist/images
+src/dist/images
+src/dist/js/functions.js
 
 # keys.json #
 keys.json
