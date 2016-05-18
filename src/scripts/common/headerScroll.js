@@ -4,8 +4,7 @@
     var $header           = $('#header');
     var $window           = $(w);
 
-    // on scroll header anim on desktop
-    $window.scroll(function(e) {
+    var onWindowScroll = function() {
 
         var scrollTop = $window.scrollTop();
 
@@ -15,6 +14,10 @@
             $header.removeClass('reversed');
         }
 
-    });
+    };
+
+    // on scroll header anim
+    $window.scroll(onWindowScroll);
+    onWindowScroll();
 
 })(window, jQuery);
