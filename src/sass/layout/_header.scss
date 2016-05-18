@@ -11,12 +11,38 @@
   min-width: 320px;
   height: map-get($header-height, 'std');
 
+  &::after {
+    content: '\0020';
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: map-get($header-height, 'std');
+
+    height: map-get($header-height, 'std');
+    background: get-color('block', 'base');
+
+    box-shadow: 0 0 15px 0 rgba(get-color('block', 'base-reversed'), 0.15);
+
+    transition: bottom 200ms ease-out;
+  }
+
   @include breakpoint('medium') {
     height: map-get($header-height, 'medium');
+
+    &::after {
+      bottom: map-get($header-height, 'medium');
+      height: map-get($header-height, 'medium');
+    }
   }
 
   @include breakpoint('large') {
     height: map-get($header-height, 'large');
+
+    &::after {
+      bottom: map-get($header-height, 'large');
+      height: map-get($header-height, 'large');
+    }
   }
 
   &::before {
@@ -81,8 +107,10 @@
   }
 
   &.reversed {
-    background: get-color('block', 'base');
-    box-shadow: 0 0 15px 0 rgba(get-color('block', 'base-reversed'), 0.15);
+
+    &::after {
+      bottom: 0;
+    }
 
     &::before {
       display: none;
@@ -108,5 +136,6 @@
         }
       }
     }
+
   }
 }
