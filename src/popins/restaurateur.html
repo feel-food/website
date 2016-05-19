@@ -1,0 +1,30 @@
+<form style="padding: 30px;">
+
+    <style>
+
+        /* Nom de class de la mort pour que tu les changes (dans les deux formulaires bien sur) */
+        .customIsLoadingFeelFoodPopinForm .initialContent,
+        .customSuccessFeelFoodPopinForm .initialContent,
+        .isLoadingContent,
+        .successContent {
+            display: none;
+        }
+
+        .customIsLoadingFeelFoodPopinForm .isLoadingContent {
+            display: block;
+        }
+
+        .customSuccessFeelFoodPopinForm .successContent {
+            display: block;
+        }
+    </style>
+
+
+    <h1>Restaurateur form content</h1>
+
+    <input type="submit" value="Envoyer" class="initialContent">
+
+    <p class="isLoadingContent">Chargement en cours...</p>
+    <p class="successContent">Merci !</p>
+
+</form>
