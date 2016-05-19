@@ -1,11 +1,12 @@
 (function(w, $) {
 
     var $header             = $('#header');
-    var $scrollToFormButton = $('#scrollToFormButton');
+    var $input             = $('#contact-email-entreprise');
+    var $scrollToFormButton = $('[href="#form"]');
     var $window             = $(w);
-    var speed               = 750;
+    var speed               = 1500;
     var $htmlAndBody        = $('html, body');
-    var easing              = 'easeOutQuint';
+    var easing              = 'easeInOutQuint';
 
     var scrollToHash = function(id, skipAnimation) {
 
@@ -19,10 +20,18 @@
             if(skipAnimation) {
 
                 $window.scrollTop(top);
+                $input.focus();
 
             } else {
 
                 $htmlAndBody.animate({scrollTop: top}, speed, easing);
+
+                // after scroll focus
+                setTimeout(function() {
+
+                    $input.focus();
+
+                }, speed);
             }
         }
     };
