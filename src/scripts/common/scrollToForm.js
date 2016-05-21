@@ -1,7 +1,7 @@
 (function(w, $) {
 
     var $header             = $('#header');
-    var $input             = $('#contact-email-entreprise');
+    var $input             = $('#contactEmailEntreprise');
     var $scrollToFormButton = $('[href="#form"]');
     var $window             = $(w);
     var speed               = 1500;

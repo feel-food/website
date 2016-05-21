@@ -1,7 +1,7 @@
 (function(w, $) {
 
     var $form                        = $('#form form');
-    var customPopinClassCss          = 'customFeelFoodPopinForm';
+    w.customPopinClassCss            = 'customFeelFoodPopinForm';
     var customIsLoadingPopinClassCss = 'customIsLoadingFeelFoodPopinForm';
     var customSuccessPopinClassCss   = 'customSuccessFeelFoodPopinForm';
     var isRestaurateurPage           = !!$('body.restaurateurs').length;
@@ -28,23 +28,33 @@
             afterShow: function() {
 
                 // catch on submit event
-                var $popinForm = $('.' + customPopinClassCss + ' .fancybox-inner form');
+                var $popinForm = $('.' + w.customPopinClassCss + ' .fancybox-inner form');
 
                 $popinForm.submit(function(e) {
                     e.preventDefault();
 
+                    var data = getFormData();
+
                     // is Loading
                     $popinForm.addClass(customIsLoadingPopinClassCss);
 
-                    // TODO save to firebase
+                    // save to firebase
+                    addToFirebase(isRestaurateurPage ? 'Restaurateurs' : 'Entreprises', data, function(err) {
 
-                    // after save, remove loading, add success message, empty previous form
-                    setTimeout(function() {
-
+                        // after save, remove loading, add success message, empty previous form
                         $popinForm.removeClass(customIsLoadingPopinClassCss);
-                        $popinForm.addClass(customSuccessPopinClassCss);
 
-                    }, 1000);
+                        if(err) {
+
+                            alert('Une erreur est survenue. Veuillez essayer de nouveau.');
+
+                        } else {
+
+                            $popinForm.addClass(customSuccessPopinClassCss);
+                        }
+
+                    });
+
                 });
 
             }
