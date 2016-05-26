@@ -6,7 +6,7 @@ module.exports = function(options) {
 
     var params = options.params;
     
-    gulp.task('build', ['clean:build', 'images', 'favicons', 'icons', 'styles', 'scripts'], function() {
+    gulp.task('build', ['clean:build', 'icons', 'images', 'favicons', 'styles', 'scripts'], function() {
 
         return gulp.src([
             options.src + '/{*,**}',
