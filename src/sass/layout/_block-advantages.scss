@@ -2,9 +2,10 @@
 // Block advantages
 // -----------------------------------------------------------------------------
 
+$name: "block-advantages";
 $bg-color: #f4e8e1;
 
-.block-advantages {
+.#{$name} {
   @extend %strate-std;
   padding-top: ($block-padder-larger * 2);
   overflow: hidden;
@@ -76,18 +77,18 @@ $bg-color: #f4e8e1;
   &--title {
     @extend %title-highlight;
     color: get-color('theme', 'primary');
-    max-width: 228px;
+    max-width: 225px;
 
     &::after {
       background-image: url(../images/backgrounds/title-highlight-advantages.png);
     }
 
     @include breakpoint('medium') {
-      max-width: 298px;
+      max-width: 287px;
     }
 
     @include breakpoint('large') {
-      max-width: 368px;
+      max-width: 338px;
     }
   }
 
@@ -351,7 +352,7 @@ $bg-color: #f4e8e1;
   // Page restaurateurs
   @include when-inside('.restaurateurs') {
 
-    .block-advantages--visual {
+    .#{$name}--visual {
 
       @include breakpoint('medium') {
         margin-left: -260px;
@@ -362,37 +363,37 @@ $bg-color: #f4e8e1;
       }
     }
 
-    .block-advantages--col {
+    .#{$name}--col {
 
       @include breakpoint('medium') {
         max-width: 53%;
       }
 
       @include breakpoint('large') {
-        max-width: 44%;
+        max-width: 47%;
       }
     }
 
-    .block-advantages--title {
-      max-width: 245px;
+    .#{$name}--title {
+      max-width: 248px;
 
       @include breakpoint('medium') {
-        max-width: 320px;
+        max-width: 316px;
       }
 
       @include breakpoint('large') {
-        max-width: 395px;
+        max-width: 425px;
       }
     }
 
-    .block-advantages--list {
+    .#{$name}--list {
 
       @include breakpoint('large') {
-        width: 510px;
+        width: 485px;
       }
     }
 
-    .block-advantages--item {
+    .#{$name}--item {
 
       p strong {
         background: -webkit-#{$gradient-reversed};

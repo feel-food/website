@@ -2,9 +2,10 @@
 // Block about
 // -----------------------------------------------------------------------------
 
+$name: "block-about";
 $bg-color: #ab653f;
 
-.block-about {
+.#{$name} {
   @extend %strate-std;
   background: url(../images/backgrounds/02_FeelFood_6_ENTREPRISE_bloc1-adoptez2--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
@@ -31,7 +32,7 @@ $bg-color: #ab653f;
 
   &--title {
     @extend %title-highlight;
-    max-width: 194px;
+    max-width: 168px;
     color: get-color('text', 'base-reversed');
 
     &::after {
@@ -39,11 +40,11 @@ $bg-color: #ab653f;
     }
 
     @include breakpoint('medium') {
-      max-width: 252px;
+      max-width: 215px;
     }
 
     @include breakpoint('large') {
-      max-width: 310px;
+      max-width: 285px;
     }
   }
 
@@ -88,19 +89,20 @@ $bg-color: #ab653f;
       background-image: url(../images/backgrounds/09_FeelFood_6_RESTAURATEUR_bloc1-concept.jpg);
     }
 
-    .block-about--title {
-      max-width: 210px;
+    .#{$name}--title {
+      max-width: 184px;
 
       @include breakpoint('medium') {
-        max-width: 275px;
+        max-width: 234px;
       }
 
       @include breakpoint('large') {
-        max-width: 340px;
+        max-width: 310px;
       }
     }
 
-    .block-about--subtitle {
+    .#{$name}--subtitle {
+      max-width: 90%;
 
       @include breakpoint('medium') {
         width: 370px;

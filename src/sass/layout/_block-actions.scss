@@ -2,9 +2,10 @@
 // Block actions
 // -----------------------------------------------------------------------------
 
+$name: "block-actions";
 $bg-color: #fbefe8;
 
-.block-actions {
+.#{$name} {
   @extend %strate-std;
   min-height: 425px;
   background: url(../images/backgrounds/05_FeelFood_6_ENTREPRISE_bloc4-calltoaction4--mobile.jpg) no-repeat center $bg-color;
@@ -20,15 +21,15 @@ $bg-color: #fbefe8;
 
   &--content {
     @extend %container;
-    max-width: 310px;
+    max-width: 320px;
     text-align: center;
 
     @include breakpoint('medium') {
-      max-width: 490px;
+      max-width: 420px;
     }
 
     @include breakpoint('large') {
-      max-width: 610px;
+      max-width: 560px;
     }
   }
 
@@ -55,7 +56,7 @@ $bg-color: #fbefe8;
     .form-item {
 
       @include breakpoint('large') {
-        width: 340px;
+        width: 310px;
         margin-right: $text-margin-small;
       }
     }
@@ -71,6 +72,23 @@ $bg-color: #fbefe8;
 
     .form-submit {
       width: 100%;
+    }
+  }
+
+  @include when-inside('.restaurateurs') {
+
+    .#{$name}--title {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 238px;
+
+      @include breakpoint('medium') {
+        max-width: 300px;
+      }
+
+      @include breakpoint('large') {
+        max-width: 410px;
+      }
     }
   }
 }

@@ -2,9 +2,10 @@
 // Block introduction
 // -----------------------------------------------------------------------------
 
+$name: "block-introduction";
 $bg-color: get-color('block', 'base-reversed');
 
-.block-introduction {
+.#{$name} {
   @extend %strate-std;
   display: flex;
   align-items: center;
@@ -18,15 +19,15 @@ $bg-color: get-color('block', 'base-reversed');
 
   &--content {
     @extend %container;
-    max-width: 240px;
+    max-width: 275px;
     text-align: center;
 
     @include breakpoint('medium') {
-      max-width: 410px;
+      max-width: 350px;
     }
 
     @include breakpoint('large') {
-      max-width: 500px;
+      max-width: 465px;
     }
   }
 
@@ -41,10 +42,12 @@ $bg-color: get-color('block', 'base-reversed');
   
   &--desc {
     @extend %text-std;
+    margin: 0 auto;
+    max-width: 80%;
     color: get-color('text', 'base-reversed');
 
-    @include breakpoint('medium') {
-      padding: 0 $block-padder-larger;
+    @include breakpoint('large') {
+      max-width: 60%;
     }
   }
 
@@ -66,25 +69,18 @@ $bg-color: get-color('block', 'base-reversed');
       background-image: url(../images/backgrounds/08_FeelFood_6_RESTAURATEUR_homepa2.jpg);
     }
 
-    .block-introduction--content {
+    .#{$name}--content {
+      max-width: 320px;
 
-      @include breakpointBetween('small', 'medium') {
-        max-width: 320px;
+      @include breakpoint('medium') {
+        max-width: 575px;
       }
     }
 
-    .block-introduction--title {
+    .#{$name}--title {
 
       &::after {
         background-image: url(../images/backgrounds/title-highlight-introduction-restaurateurs.png);
-      }
-    }
-
-    .block-introduction--desc {
-
-      @include breakpointBetween('small', 'medium') {
-        max-width: 240px;
-        margin: 0 auto;
       }
     }
   }

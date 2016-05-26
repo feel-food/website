@@ -2,9 +2,10 @@
 // Block app
 // -----------------------------------------------------------------------------
 
+$name: "block-app";
 $bg-color: get-color('block', 'base-reversed');
 
-.block-app {
+.#{$name} {
   @extend %strate-std;
   padding-bottom: ($block-padder-larger * 5);
   min-height: 650px;
@@ -88,15 +89,15 @@ $bg-color: get-color('block', 'base-reversed');
 
   &--title {
     @extend %title-highlight;
-    max-width: 222px;
+    max-width: 192px;
     color: get-color('text', 'base-reversed');
 
     @include breakpoint('medium') {
-      max-width: 288px;
+      max-width: 330px;
     }
 
     @include breakpoint('large') {
-      max-width: 355px;
+      max-width: 445px;
     }
 
     &::after {
@@ -110,7 +111,7 @@ $bg-color: get-color('block', 'base-reversed');
     color: #4c4c4c;
 
     @include breakpoint('medium') {
-      width: 300px;
+      width: 310px;
     }
 
     @include breakpoint('large') {
@@ -155,6 +156,17 @@ $bg-color: get-color('block', 'base-reversed');
       font-size: 1.1em;
       font-weight: 700;
       text-transform: uppercase;
+    }
+  }
+
+  @include when-inside('.restaurateurs') {
+
+    .#{$name}--title {
+      max-width: 240px;
+
+      @include breakpoint('medium') {
+        max-width: 410px;
+      }
     }
   }
 }
