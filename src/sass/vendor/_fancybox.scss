@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// Fancybox customization
+// -----------------------------------------------------------------------------
+
+$name: "fancybox";
+
+.#{$name} {
+
+  &-wrap {
+
+    .#{$name}-close {
+      @extend %icon_close-std;
+      border-radius: 50px;
+      width: 50px;
+      height: 50px;
+      background-color: get-color('theme', 'primary');
+      background-position: center;
+    }
+
+    &.#{$name}-opened {
+
+      .#{$name}-skin {
+        box-shadow: 0 0 29px rgba(#000, 0.19);
+      }
+    }
+  }
+
+  &-overlay {
+    background: rgba(#cf1942, 0.95) !important;
+  }
+}

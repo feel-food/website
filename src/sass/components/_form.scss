@@ -7,9 +7,20 @@
   @extend %font-size-std;
   margin-bottom: ($block-margin-after / 2);
 
-  // label
   label {
     @extend %visually-hidden;
+  }
+
+  &.form-type-radios,
+  &.form-type-checkboxes {
+
+    label {
+      position: relative;
+      width: auto;
+      height: auto;
+      margin: 0;
+      clip: inherit;
+    }
   }
 
   .form-text,
@@ -22,7 +33,7 @@
     height: map-get($form-field-height, 'std');
     padding: $block-padder-medium $block-padder;
     box-sizing: border-box;
-    border: 0;
+    border: 1px solid get-color('block', 'base');
     border-radius: 6px;
     color: get-color('text', 'soft');
     background-color: get-color('block', 'base');
@@ -38,6 +49,7 @@
 
     &:focus {
       border: 1px solid get-color('text', 'soft');
+      outline: none;
     }
   }
 

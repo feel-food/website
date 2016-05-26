@@ -1,31 +1,28 @@
-<form style="padding: 30px;">
+<form>
 
-    <style>
+    <div class="form-contact">
+        <div class="form-contact--init">
+            <h1 class="form-contact--title">Trouver un emplacement</h1>
+            <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet</p>
 
-        /* Nom de class de la mort pour que tu les changes (dans les deux formulaires bien sur) */
-        .customIsLoadingFeelFoodPopinForm .initialContent,
-        .customSuccessFeelFoodPopinForm .initialContent,
-        .isLoadingContent,
-        .successContent {
-            display: none;
-        }
+            <div class="form-item">
+                <label for="testContent">Test</label>
+                <input type="text" class="form-text" name="testContent" id="testContent" value="Contenu test"><br>
+            </div>
 
-        .customIsLoadingFeelFoodPopinForm .isLoadingContent {
-            display: block;
-        }
+            <div class="form-actions">
+                <input type="submit" value="Envoyer" class="initialContent form-submit">
+            </div>
+        </div>
 
-        .customSuccessFeelFoodPopinForm .successContent {
-            display: block;
-        }
-    </style>
+        <div class="form-contact--loading">
+            <p class="form-contact--desc">Chargement en cours...</p>
+        </div>
 
-
-    <h1>Restaurateur form content</h1>
-
-    <input type="text" name="testContent" id="testContent" value="Contenu test"><br>
-    <input type="submit" value="Envoyer" class="initialContent">
-
-    <p class="isLoadingContent">Chargement en cours...</p>
-    <p class="successContent">Merci !</p>
+        <div class="form-contact--success">
+            <p class="form-contact--title">MERCi, nous vous recontacterons</p>
+            <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit varius vehicula.</p>
+        </div>
+    </div>
 
 </form>

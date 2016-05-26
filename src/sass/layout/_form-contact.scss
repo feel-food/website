@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// Form contact
+// -----------------------------------------------------------------------------
+
+$name: "form-contact";
+
+.#{$name} {
+  padding: $block-padder ($block-padder-larger);
+  background-color: #f4f4f4;
+
+  &--title {
+    @extend %title-medium;
+    color: get-color('theme', 'primary');
+  }
+
+  &--desc {
+    @extend %text-std;
+    color: get-color('text', 'soft');
+  }
+
+  .form-text,
+  .form-textarea,
+  .form-select {
+    background-color: get-color('block', 'base');
+  }
+
+  &--init {
+
+    .is-loading &,
+    .is-success & {
+      display: none;
+    }
+  }
+
+  &--loading {
+    display: none;
+
+    .is-loading & {
+      display: block;
+    }
+  }
+
+  &--success {
+    display: none;
+
+    .is-success & {
+      display: block;
+    }
+  }
+}

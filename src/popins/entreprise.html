@@ -1,31 +1,85 @@
-<form style="padding: 30px;">
+<form>
 
-    <style>
+    <div class="form-contact">
+        <div class="form-contact--init">
+            <h1 class="form-contact--title">accueillir un restaurateur</h1>
+            <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet</p>
 
-        /* Nom de class de la mort pour que tu les changes (dans les deux formulaires bien sur) */
-        .customIsLoadingFeelFoodPopinForm .initialContent,
-        .customSuccessFeelFoodPopinForm .initialContent,
-        .isLoadingContent,
-        .successContent {
-            display: none;
-        }
+            <div class="form-item name">
+                <label for="contactName">Nom</label>
+                <input type="text" class="form-text" title="Nom" placeholder="Nom" name="contactName" id="contactName" value="">
+            </div>
 
-        .customIsLoadingFeelFoodPopinForm .isLoadingContent {
-            display: block;
-        }
+            <div class="form-item firstname">
+                <label for="contactFirstname">Prénom</label>
+                <input type="text" class="form-text" title="Prénom" placeholder="Prénom" name="contactFirstname" id="contactFirstname" value="">
+            </div>
 
-        .customSuccessFeelFoodPopinForm .successContent {
-            display: block;
-        }
-    </style>
+            <div class="form-item phone">
+                <label for="contactPhone">Téléphone</label>
+                <input type="tel" class="form-text" title="Téléphone" placeholder="Téléphone" name="contactPhone" id="contactPhone" value="">
+            </div>
 
+            <div class="form-item email">
+                <label for="contactEmail">E-mail</label>
+                <input type="email" class="form-text" title="E-mail" placeholder="E-mail" name="contactEmail" id="contactEmail" value="yann@feelfood.fr">
+            </div>
 
-    <h1>Entreprise form content</h1>
+            <div class="form-item society-name">
+                <label for="contactSociety">Nom de votre entreprise</label>
+                <input type="text" class="form-text" title="Nom de votre entreprise" placeholder="Nom de votre entreprise" name="contactSociety" id="contactSociety" value="">
+            </div>
 
-    <input type="text" name="testContent" id="testContent" value="Contenu test"><br>
-    <input type="submit" value="Envoyer" class="initialContent">
+            <div class="form-item society-address">
+                <label for="contactSocietyAddress">Adresse de l'entreprise</label>
+                <input type="text" class="form-text" title="Adresse de l'entreprise" placeholder="Adresse de l'entreprise" name="contactSocietyAddress" id="contactSocietyAddress" value=""><br>
+            </div>
 
-    <p class="isLoadingContent">Chargement en cours...</p>
-    <p class="successContent">Merci !</p>
+            <div class="form-item society-role">
+                <label for="contactSocietyRole">Poste au sein de l'entreprise</label>
+                <input type="text" class="form-text" title="Poste au sein de l'entreprise" placeholder="Poste au sein de l'entreprise" name="contactSocietyRole" id="contactSocietyRole" value="">
+            </div>
 
+            <div class="form-item form-type-radios">
+                <label for="contactOutside">L’entreprise dispose d’un emplacement extérieur ? </label>
+                <div class="form-radios" id="contactOutside">
+                    <div class="form-item form-type-radio form-item-radios">
+                        <label for="contactOutsideYes" class="option">Oui </label>
+                        <input type="radio" class="form-radio" value="Oui" name="contactOutside" id="contactOutsideYes">
+                    </div>
+                    <div class="form-item form-type-radio form-item-radios">
+                        <label for="contactOutsideNo" class="option">Non </label>
+                        <input type="radio" class="form-radio" value="Non" name="contactOutside" id="contactOutsideNo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-item form-type-radios">
+                <label for="contactOutside">L’entreprise dispose d’un espace d’accueil intérieur ? (salle commune, cafétéria...) </label>
+                <div class="form-radios" id="contactInside">
+                    <div class="form-item form-type-radio form-item-radios">
+                        <label for="contactInsideYes" class="option">Oui </label>
+                        <input type="radio" class="form-radio" value="Oui" name="contactInside" id="contactInsideYes">
+                    </div>
+                    <div class="form-item form-type-radio form-item-radios">
+                        <label for="contactInsideNo" class="option">Non </label>
+                        <input type="radio" class="form-radio" value="Non" name="contactInside" id="contactInsideNo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" value="Envoyer" class="initialContent form-submit">
+            </div>
+        </div>
+
+        <div class="form-contact--loading">
+            <p class="form-contact--desc">Chargement en cours...</p>
+        </div>
+
+        <div class="form-contact--success">
+            <p class="form-contact--title">MERCi, nous vous recontacterons</p>
+            <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit varius vehicula.</p>
+        </div>
+    </div>
 </form>
