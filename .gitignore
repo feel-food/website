@@ -28,3 +28,6 @@ src/dist/js/functions.js
 
 # keys.json #
 keys.json
+
+# generated html files #
+src/*.html

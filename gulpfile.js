@@ -25,6 +25,8 @@ var options = {
         faviconsPath       : 'dist/favicon/',
         faviconsFolder     : 'favicon',
         faviconsIncludePath: 'src/_favicon.txt',
+        htmlTemplateFolder : 'templates',
+        htmlPageFolder     : 'pages',
         tasksPath          : {
             source     : {
                 favicon   : 'src/favicon.png',
