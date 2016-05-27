@@ -15,7 +15,7 @@ module.exports = function(options) {
         gulp.watch('**/*.js', {cwd: params.tasksPath.source.scriptsDir}, ['scripts']);
         gulp.watch('**/*', {cwd: params.tasksPath.source.imagesDir}, ['images']);
         gulp.watch(
-            '{,' + options.params.htmlTemplateFolder + '/,' + options.params.htmlPageFolder + '/}*.html',
+            '{' + options.params.htmlTemplateFolder + '/,' + options.params.htmlPageFolder + '/}*.html',
             {cwd: options.src},
             ['extend']
         );
