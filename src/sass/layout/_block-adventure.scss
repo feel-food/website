@@ -1,0 +1,123 @@
+// -----------------------------------------------------------------------------
+// Block aventure
+// -----------------------------------------------------------------------------
+
+$name: "block-adventure";
+$bg-color: get-color('block', 'base-colored');
+
+.#{$name} {
+  @extend %strate-std;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../images/backgrounds/15_FeelFood_6_ABOUT_bloc1-aventure2--mobile.jpg) no-repeat top right $bg-color;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    background-image: url(../images/backgrounds/15_FeelFood_6_ABOUT_bloc1-aventure2.jpg);
+  }
+
+  &--content {
+    @extend %container;
+    max-width: 275px;
+
+    @include breakpoint('medium') {
+      max-width: 350px;
+    }
+
+    @include breakpoint('large') {
+      max-width: 465px;
+    }
+  }
+
+  &--title,
+  &--subtitle,
+  &--desc,
+  &--desc2 {
+    padding-right: ($block-padder-medium * 1.5);
+    padding-left: ($block-padder-medium * 1.5);
+
+    @include breakpoint('medium') {
+      padding-right: $block-padder;
+      padding-left: $block-padder;
+    }
+  }
+
+  &--title {
+    @extend %title-highlight;
+    max-width: 195px;
+    color: get-color('text', 'base-reversed');
+
+    &::after {
+      background-image: url(../images/backgrounds/title-highlight-about.png);
+    }
+
+    @include breakpoint('medium') {
+      max-width: 215px;
+    }
+
+    @include breakpoint('large') {
+      max-width: 285px;
+    }
+  }
+
+  &--subtitle {
+    @extend %title-medium;
+    max-width: none;
+    color: get-color('theme', 'tertiary');
+
+    @include breakpoint('medium') {
+      width: 390px;
+    }
+
+    @include breakpoint('large') {
+      margin-bottom: 0;
+      max-width: 50%;
+    }
+  }
+
+  &--desc,
+  &--desc2 {
+    @extend %text-std;
+    margin: $block-margin-before 0;
+    color: get-color('text', 'base-reversed');
+    opacity: 0.7;
+
+    @include breakpoint('large') {
+      max-width: 60%;
+    }
+
+    strong {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &--desc {
+    font-weight: bold;
+  }
+
+  &--baseline {
+    margin-top: ($block-margin-before);
+    padding-top: ($block-padder-medium * 1.5);
+    padding-bottom: ($block-padder-medium * 1.5);
+
+    border-top: 1px solid get-color('block', 'base');
+    border-bottom: 1px solid get-color('block', 'base');
+    text-align: center;
+    white-space: nowrap;
+    @include pxtorem(20px, 20px);
+
+
+    strong {
+      color: get-color('text', 'base-reversed');
+      text-transform: uppercase;
+    }
+    span {
+      display: inline-block;
+      padding: 0 $text-margin-smaller;
+      color: get-color('text', 'softer');
+      vertical-align: baseline;
+    }
+  }
+}

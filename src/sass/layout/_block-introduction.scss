@@ -39,7 +39,7 @@ $bg-color: get-color('block', 'base-reversed');
       background-image: url(../images/backgrounds/title-highlight-introduction-entreprise.png);
     }
   }
-  
+
   &--desc {
     @extend %text-std;
     margin: 0 auto;
@@ -82,6 +82,27 @@ $bg-color: get-color('block', 'base-reversed');
       &::after {
         background-image: url(../images/backgrounds/title-highlight-introduction-restaurateurs.png);
       }
+    }
+  }
+
+  // Page à propos
+  @include when-inside('.aPropos') {
+    background-image: url(../images/backgrounds/14_FeelFood_6_ABOUT_homepa--mobile.jpg);
+
+    @include breakpoint('medium') {
+      background-image: url(../images/backgrounds/14_FeelFood_6_ABOUT_homepa.jpg);
+    }
+
+    .#{$name}--content {
+      max-width: 250px;
+
+      @include breakpoint('medium') {
+        max-width: 435px;
+      }
+    }
+
+    .#{$name}--desc {
+      max-width: 95%;
     }
   }
 }
