@@ -1,0 +1,202 @@
+// -----------------------------------------------------------------------------
+// Block aventure
+// -----------------------------------------------------------------------------
+
+$name: "block-team";
+$bg-color: get-color('block', 'base-skin');
+
+.#{$name} {
+  @extend %strate-std;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../images/backgrounds/16_FeelFood_6_ABOUT_bloc2-team_02--mobile.jpg) no-repeat bottom left $bg-color;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    background-image: url(../images/backgrounds/16_FeelFood_6_ABOUT_bloc2-team_02.jpg);
+    background-position: bottom left;
+  }
+
+  &--content {
+    @extend %container;
+    @extend %clearfix;
+    max-width: 275px;
+
+    @include breakpoint('medium') {
+      max-width: none;
+    }
+
+    @include breakpoint('large') {
+      max-width: 970px;
+    }
+  }
+
+  &--title,
+  &--subtitle,
+  &--desc {
+    padding-right: ($block-padder-medium * 1.5);
+    padding-left: ($block-padder-medium * 1.5);
+
+    @include breakpoint('medium') {
+      padding-right: $block-padder;
+      padding-left: $block-padder;
+    }
+  }
+
+  &--title {
+    @extend %title-highlight;
+    max-width: 195px;
+    color: get-color('theme', 'primary');
+    text-align: right;
+    margin-left: auto;
+    margin-right: -15px;
+
+    &::after {
+      background-image: url(../images/backgrounds/title-highlight-advantages.png);
+    }
+
+    @include breakpoint('medium') {
+      margin-top: $block-margin-before * 7;
+      margin-right: $block-margin-before;
+      max-width: 215px;
+    }
+
+    @include breakpoint('large') {
+      margin-right: -15px;
+      max-width: 290px;
+    }
+  }
+
+  &--subtitle {
+    @extend %title-medium;
+    max-width: none;
+    color: get-color('text', 'soft');
+    text-align: right;
+    padding-right: 0;
+    margin-left: 15px;
+
+    @include breakpoint('medium') {
+      margin-bottom: 0;
+      margin-left: auto;
+      padding-right: 0;
+      max-width: 260px;
+      margin-right: $block-margin-before + 15px;
+    }
+
+    @include breakpoint('large') {
+      margin-right: 15px;
+    }
+  }
+
+  &--card {
+    text-align: center;
+    margin-bottom: $text-margin;
+
+    max-width: 220px;
+
+    @include breakpoint('medium') {
+      max-width: 350px;
+    }
+  }
+
+  &--yann {
+    $decal: 20px;
+    margin-left: -$decal;
+    margin-right: $decal;
+
+    @include breakpoint('medium') {
+      margin-top: -170px;
+      margin-left: 160px;
+      margin-right: 270px;
+    }
+
+    @include breakpoint('large') {
+      margin-right: 0;
+    }
+  }
+
+  &--diane {
+    $decal: 70px;
+    margin-right: -$decal;
+    margin-left: $decal;
+    margin-bottom: $text-margin * 6;
+
+    @include breakpoint('medium') {
+      margin-top: -80px;
+      margin-left: 450px;
+      margin-right: 0;
+    }
+
+    @include breakpoint('large') {
+      margin-bottom: $text-margin * 6;
+    }
+  }
+
+  &--visual {
+    $visual-border-padder: 4px;
+    $visual-size: 50px;
+    $large-visual-size: 100px;
+
+    display: inline-block;
+    vertical-align: top;
+
+    margin: 0 0 $block-padder-medium;
+    padding: $visual-border-padder;
+
+    background: $gradient-std;
+    border-radius: $visual-size * 2;
+
+    img {
+      display: block;
+      vertical-align: middle;
+
+      border: $visual-border-padder solid get-color('block', 'base-skinner');
+      background: get-color('block', 'base-skinner');
+
+      width: $visual-size;
+      border-radius: $visual-size;
+
+      @include breakpoint('medium') {
+        width: $large-visual-size;
+      }
+    }
+  }
+
+  &--name {
+    @extend %title-highlight;
+    @include pxtorem(18px, 22px);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: get-color('theme', 'primary');
+
+    @include breakpoint('medium') {
+      @include pxtorem(30px, 34px);
+    }
+
+    @include breakpoint('large') {
+      @include pxtorem(30px, 34px);
+    }
+  }
+
+  &--headline {
+    @extend %title-highlight;
+    @include pxtorem(9px, 9px);
+    margin-bottom: 0;
+    padding-bottom: $block-padder-medium;
+    color: get-color('text', 'soft');
+
+    @include breakpoint('medium') {
+      @include pxtorem(16px, 18px);
+    }
+
+    @include breakpoint('large') {
+      @include pxtorem(16px, 18px);
+    }
+  }
+
+  &--desc {
+    color: get-color('text', 'darker');
+    opacity: 0.6;
+  }
+}
