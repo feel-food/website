@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// Resize svg width & height by ratio
+// @param {Number} $size
+// @param {Number} $lineHeight [null]
+// -----------------------------------------------------------------------------
+
+@mixin svg-ratio($currentWidth, $currentHeight, $ratio: 1) {
+
+  $width: $currentWidth * $ratio;
+  $height: $currentHeight * $ratio;
+
+  width: $width;
+  height: $height;
+  -webkit-background-size: $width $height;
+  background-size: $width $height;
+}

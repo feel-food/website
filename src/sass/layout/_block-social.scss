@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// Block about
+// -----------------------------------------------------------------------------
+
+$name: "block-social";
+$bg-color: get-color('block', 'base-stronger');
+
+.#{$name} {
+  @extend %strate-std;
+  background: url(../images/backgrounds/17_FeelFood_6_ABOUT_bloc3-contact3-_02--mobile.jpg) no-repeat center $bg-color;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    min-height: 420px;
+    background-image: url(../images/backgrounds/17_FeelFood_6_ABOUT_bloc3-contact3-_02.jpg);
+  }
+
+  @include breakpoint('large') {
+    min-height: 420px;
+  }
+
+  &--content {
+    @extend %container;
+  }
+
+  &--title,
+  &--facebook {
+    padding-right: ($block-padder-medium * 1.5);
+    padding-left: ($block-padder-medium * 1.5);
+
+    @include breakpoint('medium') {
+      padding-right: $block-padder;
+      padding-left: $block-padder;
+    }
+  }
+
+  &--title {
+    @extend %title-highlight;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+    text-align: center;
+
+    color: get-color('text', 'base-reversed');
+
+    &::after {
+      display: none;
+      //background-image: url(../images/backgrounds/title-highlight-about.png);
+    }
+
+    @include breakpoint('medium') {
+      max-width: 600px;
+    }
+
+    @include breakpoint('large') {
+      //max-width: 285px;
+    }
+  }
+
+  &--facebook {
+    text-align: center;
+
+    .fb-like {
+      display: block;
+      padding: $block-padder-medium;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .fb-like,
+    .fb-like,
+    .fb-like span,
+    .fb-like span iframe[style] {
+      width: 100% !important;
+
+      @include breakpoint('medium') {
+        margin-left: auto;
+        margin-right: auto;
+        width: 450px !important;
+      }
+    }
+  }
+
+}

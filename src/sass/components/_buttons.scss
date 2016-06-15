@@ -73,6 +73,18 @@
     }
   }
 
+  &--border--secondary {
+    @extend %button--border;
+
+    color: get-color('text', 'soft');
+
+    &:hover {
+      border-color: get-color('text', 'soft');
+      color: get-color('block', 'base-skinnest');
+      background-color: get-color('text', 'soft');
+    }
+  }
+
   // Gradient buttons
 
   &--gradient {
