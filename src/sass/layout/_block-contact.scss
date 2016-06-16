@@ -209,12 +209,10 @@ $bg-color: get-color('block', 'base-softer');
       vertical-align: middle;
     }
 
-    .contactPicto {
+    .contact-picto {
       @extend %icon_contact-reversed--standalone;
-      color: inherit;
-      margin-top: -1px;
-      display: inline-block;
       vertical-align: middle;
+      margin-top: -1px;
 
       @include svg-ratio(22px, 18px, 0.65);
     }
