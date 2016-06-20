@@ -15,12 +15,17 @@ $name: "fancybox";
       height: 50px;
       background-color: get-color('theme', 'primary');
       background-position: center;
+      background-size: 30%;
     }
 
-    &.#{$name}-opened {
+    .#{$name}-skin {
+      box-shadow: 0 0 29px rgba(#000, 0.19);
+      border-radius: 10px;
+      background: none;
 
-      .#{$name}-skin {
-        box-shadow: 0 0 29px rgba(#000, 0.19);
+      .#{$name}-inner,
+      .#{$name}-outer {
+        border-radius: 10px;
       }
     }
   }

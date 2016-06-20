@@ -5,8 +5,21 @@
 $name: "form-contact";
 
 .#{$name} {
+
   padding: $block-padder ($block-padder-larger);
   background-color: #f4f4f4;
+
+  &--visual {
+    overflow: hidden;
+    height: 160px;
+    margin-top: -80px;
+
+    img {
+      display: block;
+      margin: -210px 0 -100px;
+      width: 100%;
+    }
+  }
 
   &--title {
     @extend %title-medium;
@@ -15,16 +28,114 @@ $name: "form-contact";
 
   &--desc {
     @extend %text-std;
+    margin-bottom: $text-margin;
     color: get-color('text', 'soft');
+  }
+
+  .form-item {
+    position: relative;
+    left: -10px;
+
+    float: left;
+
+    padding-left: $block-padder-medium;
+    width: 50%;
   }
 
   .form-text,
   .form-textarea,
   .form-select {
     background-color: get-color('block', 'base');
+
+    &::placeholder {
+      color: get-color('text', 'softest');
+    }
   }
 
-  &--init {
+  .form-text {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .form-type-radios {
+    clear: both;
+    float: none;
+    width: auto;
+    max-width: 590px;
+  }
+
+  .form-type-select,
+  .form-type-radios {
+    position: relative;
+  }
+
+  .form-type-select .option,
+  .form-item.form-type-radios .form-type-radios-desc {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 200px;
+    color: get-color('text', 'softest');
+  }
+
+  .form-type-select .form-select,
+  .form-radios {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .form-item-radios {
+    float: none;
+    width: auto;
+
+    .option {
+      $height: 2em;
+
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 5px 0 0;
+
+      height: $height;
+
+      color: get-color('text', 'soft');
+      line-height: $height;
+      opacity: .6;
+    }
+
+    .form-radio {
+      $size: 18px;
+
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+
+      width: $size;
+      height: $size;
+    }
+  }
+
+  .form-type-select {
+    $selectSize: 140px;
+
+    .option {
+      @extend %not-visually-hidden;
+      padding: 20px 5px 20px 0;
+      margin-right: $selectSize;
+    }
+
+    .form-select {
+      width: $selectSize;
+    }
+  }
+
+  .form-actions {
+    clear: both;
+    text-align: right;
+  }
+
+  /*&--init {
 
     .is-loading &,
     .is-success & {
@@ -46,5 +157,5 @@ $name: "form-contact";
     .is-success & {
       display: block;
     }
-  }
+  }*/
 }

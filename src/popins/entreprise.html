@@ -1,4 +1,7 @@
 <form>
+    <div class="form-contact--visual">
+        <img src="images/popin/entreprise_photo2.jpg" alt="">
+    </div>
 
     <div class="form-contact">
         <div class="form-contact--init">
@@ -51,8 +54,23 @@
                        value="">
             </div>
 
+
+            <div class="form-item form-type-select">
+                <label for="companySize" class="option">Taille de l’entreprise</label>
+
+                <select name="companySize" id="companySize" class="form-select">
+                    <option value="1">1-10 salariés</option>
+                    <option value="1">10-50 salariés</option>
+                    <option value="1">50-100 salariés</option>
+                    <option value="1">100+ salariés</option>
+                </select>
+            </div>
+
+
+
+
             <div class="form-item form-type-radios">
-                <label for="contactOutside">L’entreprise dispose d’un emplacement extérieur ? </label>
+                <label class="form-type-radios-desc" for="contactOutside">L’entreprise dispose d’un emplacement extérieur ? </label>
                 <div class="form-radios" id="contactOutside">
                     <div class="form-item form-type-radio form-item-radios">
                         <label for="contactOutsideYes" class="option">Oui </label>
@@ -66,7 +84,7 @@
             </div>
 
             <div class="form-item form-type-radios">
-                <label for="contactOutside">L’entreprise dispose d’un espace d’accueil intérieur ? (salle commune,
+                <label class="form-type-radios-desc" for="contactOutside">L’entreprise dispose d’un espace d’accueil intérieur ? (salle commune,
                     cafétéria...) </label>
                 <div class="form-radios" id="contactInside">
                     <div class="form-item form-type-radio form-item-radios">
@@ -81,7 +99,7 @@
             </div>
 
             <div class="form-actions">
-                <input type="submit" value="Envoyer" class="initialContent form-submit">
+                <input type="submit" value="Valider" class="initialContent form-submit">
             </div>
         </div>
 

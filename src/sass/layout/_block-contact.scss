@@ -200,10 +200,6 @@ $bg-color: get-color('block', 'base-softer');
 
     font-weight: bold;
 
-    @include breakpoint('medium') {
-
-    }
-
     .text {
       display: inline-block;
       vertical-align: middle;
