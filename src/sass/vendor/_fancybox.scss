@@ -8,11 +8,13 @@ $name: "fancybox";
 
   &-wrap {
 
+    $size: 50px;
+
     .#{$name}-close {
       @extend %icon_close-std;
-      border-radius: 50px;
-      width: 50px;
-      height: 50px;
+      border-radius: $size;
+      width: $size;
+      height: $size;
       background-color: get-color('theme', 'primary');
       background-position: center;
       background-size: 30%;
@@ -26,6 +28,7 @@ $name: "fancybox";
       .#{$name}-inner,
       .#{$name}-outer {
         border-radius: 10px;
+        background: #f4f4f4;
       }
     }
   }

@@ -2,8 +2,8 @@
 
     var $form                        = $('#form form');
     w.customPopinClassCss            = 'customFeelFoodPopinForm';
-    var customIsLoadingPopinClassCss = 'customIsLoadingFeelFoodPopinForm';
-    var customSuccessPopinClassCss   = 'customSuccessFeelFoodPopinForm';
+    var customIsLoadingPopinClassCss = 'is-loading';
+    var customSuccessPopinClassCss   = 'is-success';
     var isRestaurateurPage           = !!$('body.restaurateurs').length;
 
     $form.submit(function(e) {
@@ -18,6 +18,8 @@
                 type: 'ajax'
             }
         ], {
+            maxWidth : 860,
+            minHeight: 400,
             padding  : 0,
             helpers  : {
                 overlay: {
@@ -38,8 +40,7 @@
                     // is Loading
                     $popinForm.addClass(customIsLoadingPopinClassCss);
 
-                    // save to firebase
-                    addToFirebase(isRestaurateurPage ? 'Restaurateurs' : 'Entreprises', data, function(err) {
+                    var callback = function(err) {
 
                         // after save, remove loading, add success message, empty previous form
                         $popinForm.removeClass(customIsLoadingPopinClassCss);
@@ -53,7 +54,11 @@
                             $popinForm.addClass(customSuccessPopinClassCss);
                         }
 
-                    });
+                    };
+
+                    // save to firebase
+                    //setTimeout(callback, 1000);
+                    addToFirebase(isRestaurateurPage ? 'Restaurateurs' : 'Entreprises', data, callback);
 
                 });
 

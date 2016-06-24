@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// Event wrapper
+// @author Harry Roberts
+// @param {Bool} $self [false] - Whether or not to include current selector
+// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+// -----------------------------------------------------------------------------
+
+@mixin heart($size, $color) {
+
+  $halfSize: $size / 2;
+
+  position: relative;
+  top: 0;
+  display: inline-block;
+
+  margin: 0 10px;
+  width: $size;
+  height: $size;
+
+  background-color: $color;
+  transform: rotate(-45deg);
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+
+    border-radius: 50%;
+
+    height: $size;
+    width: $size;
+
+    background-color: $color;
+  }
+
+  &:before {
+    top: -$halfSize;
+    left: 0;
+  }
+
+  &:after {
+    left: $halfSize;
+    top: 0;
+  }
+
+}
