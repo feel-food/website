@@ -7,38 +7,39 @@
         <div class="form-contact--messages">
             <div class="form-contact--init">
 
-                <h1 class="form-contact--title">accueillir un restaurateur</h1>
 
-                <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet</p>
+                <h1 class="form-contact--title">accueillir un restaurateur</h1>
+                <p class="form-contact--desc">Interessé ? Inscrivez vous, on s'occupe du reste.</p>
 
                 <div class="form-item name">
                     <label for="contactName">Nom</label>
-                    <input type="text" class="form-text" title="Nom" placeholder="Nom" name="contactName" id="contactName"
-                           value="">
+                    <input type="text" class="form-text" title="Nom" placeholder="Nom" name="contactName"
+                           required id="contactName" value="">
                 </div>
 
                 <div class="form-item firstname">
                     <label for="contactFirstname">Prénom</label>
                     <input type="text" class="form-text" title="Prénom" placeholder="Prénom" name="contactFirstname"
-                           id="contactFirstname" value="">
+                           required id="contactFirstname" value="">
                 </div>
 
                 <div class="form-item phone">
                     <label for="contactPhone">Téléphone</label>
                     <input type="tel" class="form-text" title="Téléphone" placeholder="Téléphone" name="contactPhone"
-                           id="contactPhone" value="">
+                           required id="contactPhone" value="">
                 </div>
 
                 <div class="form-item email">
                     <label for="contactEmail">E-mail</label>
                     <input type="email" class="form-text" title="E-mail" placeholder="E-mail" name="contactEmail"
-                           id="contactEmail" value="yann@feelfood.fr">
+                           required id="contactEmail" value="">
                 </div>
 
                 <div class="form-item society-name">
                     <label for="contactSociety">Nom de votre entreprise</label>
                     <input type="text" class="form-text" title="Nom de votre entreprise"
-                           placeholder="Nom de votre entreprise" name="contactSociety" id="contactSociety" value="">
+                           placeholder="Nom de votre entreprise" name="contactSociety" id="contactSociety" required
+                           value="">
                 </div>
 
                 <div class="form-item society-address">
@@ -61,40 +62,44 @@
 
                     <select name="companySize" id="companySize" class="form-select">
                         <option value="1">1-10 salariés</option>
-                        <option value="1">10-50 salariés</option>
-                        <option value="1">50-100 salariés</option>
-                        <option value="1">100+ salariés</option>
+                        <option value="2">10-50 salariés</option>
+                        <option value="3">50-150 salariés</option>
+                        <option value="4">150+ salariés</option>
                     </select>
                 </div>
 
 
-
-
                 <div class="form-item form-type-radios">
-                    <label class="form-type-radios-desc" for="contactOutside">L’entreprise dispose d’un emplacement extérieur ? </label>
+                    <label class="form-type-radios-desc" for="contactOutside">L’entreprise dispose d’un emplacement
+                        extérieur ? </label>
                     <div class="form-radios" id="contactOutside">
                         <div class="form-item form-type-radio form-item-radios">
                             <label for="contactOutsideYes" class="option">Oui </label>
-                            <input type="radio" class="form-radio" value="Oui" name="contactOutside" id="contactOutsideYes">
+                            <input type="radio" class="form-radio" value="Oui" name="contactOutside"
+                                   id="contactOutsideYes">
                         </div>
                         <div class="form-item form-type-radio form-item-radios">
                             <label for="contactOutsideNo" class="option">Non </label>
-                            <input type="radio" class="form-radio" value="Non" name="contactOutside" id="contactOutsideNo">
+                            <input type="radio" class="form-radio" value="Non" name="contactOutside"
+                                   id="contactOutsideNo">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-item form-type-radios">
-                    <label class="form-type-radios-desc" for="contactOutside">L’entreprise dispose d’un espace d’accueil intérieur ? (salle commune,
+                    <label class="form-type-radios-desc" for="contactOutside">L’entreprise dispose d’un espace d’accueil
+                        intérieur ? (salle commune,
                         cafétéria...) </label>
                     <div class="form-radios" id="contactInside">
                         <div class="form-item form-type-radio form-item-radios">
                             <label for="contactInsideYes" class="option">Oui </label>
-                            <input type="radio" class="form-radio" value="Oui" name="contactInside" id="contactInsideYes">
+                            <input type="radio" class="form-radio" value="Oui" name="contactInside"
+                                   id="contactInsideYes">
                         </div>
                         <div class="form-item form-type-radio form-item-radios">
                             <label for="contactInsideNo" class="option">Non </label>
-                            <input type="radio" class="form-radio" value="Non" name="contactInside" id="contactInsideNo">
+                            <input type="radio" class="form-radio" value="Non" name="contactInside"
+                                   id="contactInsideNo">
                         </div>
                     </div>
                 </div>

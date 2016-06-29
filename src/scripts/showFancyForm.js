@@ -31,6 +31,11 @@
 
                 // catch on submit event
                 var $popinForm = $('.' + w.customPopinClassCss + ' .fancybox-inner form');
+                var $emailField = $('#contactEmail');
+
+                // reset email field
+                var data = getFormData();
+                $emailField.val(data.contactEmailEntreprise);
 
                 $popinForm.submit(function(e) {
                     e.preventDefault();

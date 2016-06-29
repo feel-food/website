@@ -1,27 +1,124 @@
 <form class="form-contact--wrapper">
+    <div class="form-contact--visual">
+        <img src="dist/images/popin/entreprise_photo2.jpg" alt="">
+    </div>
 
     <div class="form-contact">
-        <div class="form-contact--init">
-            <h1 class="form-contact--title">Trouver un emplacement</h1>
-            <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet</p>
+        <div class="form-contact--messages">
+            <div class="form-contact--init">
 
-            <div class="form-item">
-                <label for="testContent">Test</label>
-                <input type="text" class="form-text" name="testContent" id="testContent" value="Contenu test"><br>
+
+                <h1 class="form-contact--title">Trouver un emplacement</h1>
+                <p class="form-contact--desc">Interessé ? Inscrivez vous, on s'occupe du reste.</p>
+
+                <div class="form-item name">
+                    <label for="contactName">Nom</label>
+                    <input type="text" class="form-text" title="Nom" placeholder="Nom" name="contactName"
+                           required id="contactName" value="">
+                </div>
+
+                <div class="form-item firstname">
+                    <label for="contactFirstname">Prénom</label>
+                    <input type="text" class="form-text" title="Prénom" placeholder="Prénom" name="contactFirstname"
+                           required id="contactFirstname" value="">
+                </div>
+
+                <div class="form-item phone">
+                    <label for="contactPhone">Téléphone</label>
+                    <input type="tel" class="form-text" title="Téléphone" placeholder="Téléphone" name="contactPhone"
+                           required id="contactPhone" value="">
+                </div>
+
+                <div class="form-item email">
+                    <label for="contactEmail">E-mail</label>
+                    <input type="email" class="form-text" title="E-mail" placeholder="E-mail" name="contactEmail"
+                           required id="contactEmail" value="">
+                </div>
+
+                <div class="form-item society-name">
+                    <label for="contactSociety">Nom de votre commerce</label>
+                    <input type="text" class="form-text" title="Nom de votre commerce"
+                           required placeholder="Nom de votre commerce" name="contactSociety" id="contactSociety" value="">
+                </div>
+
+                <div class="form-item specialty-name">
+                    <label for="contactSpecialty">Spécialité de votre commerce</label>
+                    <input type="text" class="form-text" title="Spécialité de votre commerce"
+                           placeholder="Spécialité de votre commerce" name="contactSpecialty" id="contactSpecialty"
+                           value="">
+                </div>
+
+                <div class="form-item launch-date-name">
+                    <label for="contactLaunchDate">Date de lancement de votre activité</label>
+                    <input type="text" class="form-text" title="Date de lancement de votre activité"
+                           placeholder="Date de lancement de votre activité" name="contactLaunchDate"
+                           id="contactLaunchDate" value="">
+                </div>
+
+                <div class="form-item garage-name">
+                    <label for="contactGarage">Adresse de votre garage</label>
+                    <input type="text" class="form-text" title="Adresse de votre garage"
+                           placeholder="Adresse de votre garage" name="contactGarage" id="contactGarage" value="">
+                </div>
+
+                <div class="form-item availability-name">
+                    <label for="contactAvailability">Votre disponibilité (tous les midis, juste le lundi...)</label>
+                    <input type="text" class="form-text" title="Votre disponibilité (tous les midis, juste le lundi...)"
+                           placeholder="Votre disponibilité (tous les midis, juste le lundi...)"
+                           name="contactAvailability" id="contactAvailability" value="">
+                </div>
+
+                <div class="form-item guests-name">
+                    <label for="contactGuests">Nombre de couverts souhaités</label>
+                    <input type="text" class="form-text" title="Nombre de couverts souhaités"
+                           placeholder="Nombre de couverts souhaités"
+                           name="contactGuests" id="contactGuests" value="">
+                </div>
+
+                <div class="form-item website-name">
+                    <label for="contactWebsite">Mon site internet</label>
+                    <input type="text" class="form-text" title="Mon site internet"
+                           placeholder="Mon site internet"
+                           name="contactWebsite" id="contactWebsite" value="">
+                </div>
+
+                <div class="form-item form-type-radios">
+                    <label class="form-type-radios-desc" for="contactPlace">Je cherche un emplacement :</label>
+                    <div class="form-radios" id="contactPlace">
+                        <div class="form-item form-type-radio form-item-radios">
+                            <label for="contactPlaceSteady" class="option">régulier</label>
+                            <input type="radio" class="form-radio" value="regulier" name="contactPlace"
+                                   id="contactPlaceSteady">
+                        </div>
+                        <div class="form-item form-type-radio form-item-radios">
+                            <label for="contactPlacePonctual" class="option">ponctuel (événementiel)</label>
+                            <input type="radio" class="form-radio" value="ponctuel" name="contactPlace"
+                                   id="contactPlacePonctual">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-actions">
+                    <input type="submit" value="Valider" class="initialContent form-submit">
+                </div>
             </div>
 
-            <div class="form-actions">
-                <input type="submit" value="Envoyer" class="initialContent form-submit">
+            <div class="form-contact--loading">
+                <p class="form-contact--desc">Chargement en cours...</p>
             </div>
-        </div>
 
-        <div class="form-contact--loading">
-            <p class="form-contact--desc">Chargement en cours...</p>
-        </div>
-
-        <div class="form-contact--success">
-            <p class="form-contact--title">MERCi, nous vous recontacterons</p>
-            <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit varius vehicula.</p>
+            <div class="form-contact--success">
+                <p class="form-contact--title">Merci, nous vous recontacterons</p>
+                <p class="form-contact--desc">Interessé? Inscrivez vous pour Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Maecenas hendrerit varius vehicula.</p>
+                <p class="form-contact--love">
+                    <span class="first"></span>
+                    <!--<span class="second">
+                        <span class="content"></span>
+                    </span>-->
+                </p>
+            </div>
         </div>
     </div>
 
