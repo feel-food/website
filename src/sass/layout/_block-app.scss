@@ -134,9 +134,9 @@ $bg-color: get-color('block', 'base-reversed');
     background-color: get-color('block', 'base-strong');
     background-position: 12px center;
 
-    &:hover {
+    /*&:hover {
       background-color: get-color('block', 'base-reversed');
-    }
+    }*/
 
     @include breakpoint('medium') {
       top: 50%;
