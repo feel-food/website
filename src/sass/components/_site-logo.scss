@@ -5,10 +5,16 @@
 .site-logo {
 
   @include when-inside('.header') {
-    width: 38px;
+    img {
+      width: 38px;
+      height: 38px;
+    }
 
     @include breakpoint('medium') {
-      width: 60px;
+      img {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 
