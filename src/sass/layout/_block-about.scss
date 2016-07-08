@@ -18,6 +18,10 @@ $bg-color: #ab653f;
     @extend %container;
   }
 
+  .ie9 &--content {
+    padding-top: 100px;
+  }
+
   &--title,
   &--subtitle,
   &--desc {
