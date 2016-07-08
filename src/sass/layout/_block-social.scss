@@ -10,13 +10,18 @@ $bg-color: get-color('block', 'base-stronger');
   background: url(../images/backgrounds/17_FeelFood_6_ABOUT_bloc3-contact3-_02--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
 
+  min-height: 0;
+  height: auto;
+
   @include breakpoint('medium') {
     min-height: 420px;
+    height: 420px;
     background-image: url(../images/backgrounds/17_FeelFood_6_ABOUT_bloc3-contact3-_02.jpg);
   }
 
   @include breakpoint('large') {
-    min-height: 420px;
+    min-height: 450px;
+    height: 450px;
   }
 
   &--content {

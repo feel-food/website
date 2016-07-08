@@ -7,9 +7,15 @@ $bg-color: get-color('block', 'base-reversed');
 
 .#{$name} {
   @extend %strate-std;
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: center;
+  -ms-flex-pack: center;
+
+
   background: url(../images/backgrounds/01_FeelFood_6_ENTREPRISE_homepa--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
 
@@ -22,6 +28,7 @@ $bg-color: get-color('block', 'base-reversed');
 
     max-width: 275px;
     text-align: center;
+    height: 250px;
 
     @include breakpoint('medium') {
       max-width: 350px;
@@ -30,14 +37,6 @@ $bg-color: get-color('block', 'base-reversed');
     @include breakpoint('large') {
       max-width: 465px;
     }
-  }
-
-  .ie9 &--content {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin-top: -100px;
   }
 
   &--title {

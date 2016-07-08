@@ -20,6 +20,7 @@
 
     @include breakpoint('large') {
       min-height: 770px;
+      height: 770px;
     }
   }
 }

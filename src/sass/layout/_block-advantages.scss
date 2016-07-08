@@ -306,7 +306,7 @@ $bg-color: #f4e8e1;
 
     &::before,
     &::after {
-      content: "";
+      content: '\0020';
       position: absolute;
       top: 0;
       right: 0;

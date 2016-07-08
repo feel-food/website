@@ -8,6 +8,7 @@ $bg-color: #fbefe8;
 .#{$name} {
   @extend %strate-std;
   min-height: 425px;
+  height: 425px;
   background: url(../images/backgrounds/05_FeelFood_6_ENTREPRISE_bloc4-calltoaction4--mobile.jpg) no-repeat center $bg-color;
   background-size: cover;
 
@@ -17,6 +18,7 @@ $bg-color: #fbefe8;
 
   @include breakpoint('large') {
     min-height: 440px;
+    height: 440px;
   }
 
   &--content {

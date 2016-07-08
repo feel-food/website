@@ -18,6 +18,11 @@ $bg-color: get-color('block', 'base-colored');
     background-position: center center;
   }
 
+  @include breakpoint('large') {
+    min-height: 880px;
+    height: 880px;
+  }
+
   &--content {
     @extend %container;
     @extend %clearfix;

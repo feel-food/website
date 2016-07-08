@@ -24,6 +24,7 @@ $bg-color: get-color('block', 'base-softer');
   }
   @include breakpoint('large') {
     min-height: 0;
+    height: auto;
     background-position: top right;
   }
 
@@ -31,6 +32,8 @@ $bg-color: get-color('block', 'base-softer');
     @extend %container;
     @extend %clearfix;
     max-width: 275px;
+    margin-left: auto;
+    margin-right: auto;
 
     @include breakpoint('medium') {
       max-width: none;
