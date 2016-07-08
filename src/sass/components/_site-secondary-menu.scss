@@ -26,6 +26,10 @@
       background-size: auto 13px;
       border-color: rgba(get-color('block', 'base'), 0.5);
 
+      &:hover {
+        background-color: rgba(get-color('block', 'base'), 0.4);
+      }
+
       @include breakpoint('medium') {
         padding: $block-padder-medium $block-padder;
         width: 80px;
