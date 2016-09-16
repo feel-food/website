@@ -54,6 +54,6 @@ glob.sync('gulp/*.js').map(function(file) {
     require('./' + file)(options);
 });
 
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean:build'], function() {
     gulp.start('build');
 });
