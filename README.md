@@ -1,7 +1,7 @@
 # website
 
 ## Dev
-```gulp watch```
+```gulp watch``` & open index.html (serve it or not)
 
 ## Deploy
 ```gulp deploy```
