@@ -129,8 +129,7 @@
       }
 
       a {
-        color: lighten(get-color('text', 'base'), 100%);
-        border:1px solid red;
+        color: get-color('text', 'base');
 
         &.current {
           color: get-color('text', 'base-lighter');
